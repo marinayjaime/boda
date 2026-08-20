@@ -254,12 +254,21 @@ p { margin: 0; }
   border-radius: 999px;
   backdrop-filter: blur(6px);
 }
-.countdown__item { display: flex; flex-direction: column; align-items: center; min-width: 44px; }
+.countdown__item { display: flex; flex-direction: column; align-items: center; min-width: 44px; perspective: 200px; }
 .countdown__num {
+  display: inline-block;
   font-family: var(--font-display);
   font-size: clamp(1.3rem, 3vw, 1.9rem);
   color: var(--ink);
   font-variant-numeric: tabular-nums;
+  transform-style: preserve-3d;
+}
+.countdown__num.is-flipping { animation: countdown-flip 0.32s ease-in; }
+@keyframes countdown-flip {
+  0%   { transform: rotateX(0deg); }
+  49%  { transform: rotateX(-90deg); }
+  51%  { transform: rotateX(90deg); }
+  100% { transform: rotateX(0deg); }
 }
 .countdown__label {
   font-size: 0.62rem;
@@ -752,6 +761,8 @@ section { position: relative; }
 
 /* ---------- buttons ---------- */
 .btn {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
@@ -762,9 +773,26 @@ section { position: relative; }
   font-weight: 500;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.15s ease, background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
+.btn:active { transform: scale(0.96); }
 .btn svg { width: 16px; height: 16px; transition: transform 0.25s ease; }
+
+.btn__ink {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(244, 238, 225, 0.55);
+  transform: scale(0);
+  pointer-events: none;
+  animation: btn-ink-spread 0.65s ease-out forwards;
+}
+@keyframes btn-ink-spread {
+  to { transform: scale(1); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn:active { transform: none; }
+  .btn__ink { display: none; }
+}
 .btn--primary {
   background: var(--terracotta);
   color: #fff8ef;

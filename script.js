@@ -9,6 +9,8 @@ const SHEET_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyRPpfM2XIP6Er
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   /* ---------- Fondo de fotos en "Nuestra historia" ---------- */
   const storyPhotos = document.querySelectorAll('.story__bg-photo');
   if (storyPhotos.length > 1) {
@@ -31,13 +33,29 @@ document.addEventListener('DOMContentLoaded', () => {
     secs: document.getElementById('cd-secs'),
   };
 
+  // Cambia el texto de un dígito con un efecto de "vuelta de página" cuando
+  // el valor difiere del que ya tenía, en vez de sustituirlo en seco.
+  function setCountdownValue(el, value) {
+    if (el.textContent === value) return;
+    if (reducedMotion) {
+      el.textContent = value;
+      return;
+    }
+    el.classList.remove('is-flipping');
+    // Fuerza reflow para poder relanzar la animación en ticks consecutivos
+    void el.offsetWidth;
+    el.classList.add('is-flipping');
+    setTimeout(() => { el.textContent = value; }, 150);
+    el.addEventListener('animationend', () => el.classList.remove('is-flipping'), { once: true });
+  }
+
   function updateCountdown() {
     const diff = WEDDING_DATE - Date.now();
     if (diff <= 0) {
-      els.days.textContent = '00';
-      els.hours.textContent = '00';
-      els.mins.textContent = '00';
-      els.secs.textContent = '00';
+      setCountdownValue(els.days, '00');
+      setCountdownValue(els.hours, '00');
+      setCountdownValue(els.mins, '00');
+      setCountdownValue(els.secs, '00');
       return;
     }
     const pad = (n) => String(n).padStart(2, '0');
@@ -46,10 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const mins = Math.floor((diff % 3600000) / 60000);
     const secs = Math.floor((diff % 60000) / 1000);
 
-    els.days.textContent = pad(days);
-    els.hours.textContent = pad(hours);
-    els.mins.textContent = pad(mins);
-    els.secs.textContent = pad(secs);
+    setCountdownValue(els.days, pad(days));
+    setCountdownValue(els.hours, pad(hours));
+    setCountdownValue(els.mins, pad(mins));
+    setCountdownValue(els.secs, pad(secs));
   }
   updateCountdown();
   setInterval(updateCountdown, 1000);
@@ -124,9 +142,25 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   revealEls.forEach((el) => observer.observe(el));
 
+  /* ---------- Sello de tinta al pulsar los botones ---------- */
+  if (!reducedMotion) {
+    document.querySelectorAll('.btn').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height) * 1.8;
+        const ink = document.createElement('span');
+        ink.className = 'btn__ink';
+        ink.style.width = ink.style.height = `${size}px`;
+        ink.style.left = `${(e.clientX ?? rect.left + rect.width / 2) - rect.left - size / 2}px`;
+        ink.style.top = `${(e.clientY ?? rect.top + rect.height / 2) - rect.top - size / 2}px`;
+        btn.appendChild(ink);
+        ink.addEventListener('animationend', () => ink.remove(), { once: true });
+      });
+    });
+  }
+
   /* ---------- Llamada de atención sobre "Guardar la fecha" ---------- */
   const saveDate = document.querySelector('.save-date');
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (saveDate && !reducedMotion) {
     // Espera a que termine el fundido de entrada del hero antes de pulsar
     setTimeout(() => {
