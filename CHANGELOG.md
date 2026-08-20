@@ -4,10 +4,19 @@ Historial de todo lo que se ha ido haciendo en el proyecto, sesión a sesión. L
 
 ## Ideas propuestas, aún sin implementar
 
-- Favicon (icono de pestaña del navegador) — no tiene ninguno todavía. Aparcado de momento (2026-08-20), retomar si el usuario lo pide.
 - Revisión de accesibilidad (contraste, navegación por teclado en menú y FAQ).
 
 Descartadas (2026-08-20, decisión explícita del usuario, no reabrir sin que lo pida): email de confirmación automático al invitado, cierre automático del formulario tras el 1 de mayo de 2027, botón de compartir por WhatsApp.
+
+## 2026-08-20 (estética y ambiente)
+
+Ronda de mejoras visuales propuesta por Claude y aprobada en bloque por el usuario ("aplica esto"):
+
+- **Sello de lacre "M&J"**: nuevo monograma con forma de sello de lacre orgánico (degradado terracota, borde irregular), definido una vez como símbolo SVG reutilizable. Se usa en tres sitios: **favicon** (retoma la idea que llevaba aparcada desde el 2026-08-18 — `assets/favicon.svg` + PNG de respaldo en 32px/180px), **footer** (sustituye al "M & J" de texto anterior), y como elemento central de los nuevos **separadores decorativos** (ramas de olivo a cada lado + el sello) insertados entre La boda→Detalles, Alojamiento→Cómo llegar y Confirmar→FAQ — antes el motivo de ramas de olivo solo aparecía en el hero, ahora es un hilo visual recurrente en toda la página.
+- **Parallax sutil en las fotos del hero**: se desplazan ligeramente más lento que el resto del contenido al hacer scroll (±26px). Requirió envolver cada foto en un contenedor con overflow oculto y la imagen algo sobredimensionada (118% de alto) para que el desplazamiento no dejase huecos visibles en el marco.
+- **Cuenta atrás con "vuelta de página"**: los números giran en 3D (rotateX) cada vez que cambian, en vez de sustituirse en seco — sensación de reloj mecánico/flip clock.
+- **Sello de tinta al pulsar botones**: los botones (`.btn`) muestran un efecto de tinta expandiéndose desde el punto de clic, recortado a la forma de píldora, más una ligera compresión al pulsar.
+- Todas las animaciones nuevas respetan `prefers-reduced-motion`.
 
 ## 2026-08-20 (continuación)
 
