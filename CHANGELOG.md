@@ -11,6 +11,7 @@ Descartadas (2026-08-20, decisión explícita del usuario, no reabrir sin que lo
 
 ## 2026-08-20
 
+- **Código promocional del hotel S'Olivaret**: aún no está confirmado por el hotel, así que se cambió `MARINAYJAIME27` por "Próximamente" en la tarjeta de alojamiento. Actualizar cuando el hotel lo confirme.
 - **Repo renombrado a `boda`** (antes `Boda-Marina-y-Jaime`) para acortar la URL: ahora es https://marinayjaime.github.io/boda/. Actualizadas todas las referencias (meta tags OG/Twitter en `index.html`, `README.md`, remote de git local).
 - **Miniatura simplificada**: se quitó el texto/nombre superpuesto de `assets/og-image.jpg` porque WhatsApp recorta la miniatura y solo se veía un fragmento del diseño con las letras cortadas. Ahora es directamente la foto de la pareja a pantalla completa (1200×630), sin texto.
 - **Miniatura al compartir el enlace** (Open Graph/Twitter Card): diseñada una imagen a medida (`assets/og-image.jpg`, 1200×630) con la tipografía y paleta del sitio (Lora + Jost, tonos tierra/terracota/oliva) y una foto de la pareja, generada renderizando un HTML propio con Chrome headless. Añadidas las meta tags `og:*` y `twitter:*` en `index.html` apuntando a la URL pública de GitHub Pages. Ahora compartir el link por WhatsApp/email/redes muestra una tarjeta con foto en vez de nada.
