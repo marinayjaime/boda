@@ -274,15 +274,15 @@ p { margin: 0; }
   margin-top: 1.6rem;
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  font-size: 0.8rem;
+  gap: 0.8rem;
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
 }
 .save-date__link {
   background: none;
   border: none;
   padding: 0;
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: inherit;
   letter-spacing: 0.03em;
   color: var(--ink-soft);
   text-decoration: underline;
@@ -911,14 +911,18 @@ input:focus, select:focus, textarea:focus {
   .nav__toggle.open span:nth-child(2) { opacity: 0; }
   .nav__toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
+  .hero {
+    flex-wrap: wrap;
+    row-gap: 1.75rem;
+    column-gap: 1rem;
+  }
   .hero__photo {
-    position: absolute;
-    top: 5.2rem;
-    width: 78px;
+    position: static;
+    order: -1;
+    width: clamp(120px, 36vw, 165px);
     transform: rotate(var(--tilt, 0deg));
   }
-  .hero__photo--left { left: 0.6rem; }
-  .hero__photo--right { right: 0.6rem; }
+  .hero__content { order: 1; flex: 1 1 100%; }
   .hero__photo .hero__branch { display: none; }
 
   .details__grid { grid-template-columns: 1fr; }
