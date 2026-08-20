@@ -713,10 +713,11 @@ section { position: relative; }
 .location__route-track::before { left: 0; }
 .location__route-track::after { left: 100%; }
 .location__route-bus {
+  --bus-w: 160px;
   position: absolute;
   top: 50%;
-  left: 2%;
-  width: 160px;
+  left: 0;
+  width: var(--bus-w);
   filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.45));
   animation: bus-route 9s ease-in-out infinite;
 }
@@ -732,15 +733,18 @@ section { position: relative; }
   color: var(--terracotta-dark);
   animation: bus-badge-counter-flip 9s ease-in-out infinite;
 }
+/* La foto del bus mira de fábrica hacia la izquierda (morro a la izquierda),
+   así que va reflejada (scaleX(-1)) cuando viaja Palma → Alaró (hacia la
+   derecha) y en su orientación natural en la vuelta Alaró → Palma. */
 @keyframes bus-route {
-  0%, 8%    { left: 20%; transform: translate(-50%, -50%) scaleX(1); }
-  42%, 58%  { left: 80%; transform: translate(-50%, -50%) scaleX(1); }
-  60%       { left: 80%; transform: translate(-50%, -50%) scaleX(-1); }
-  92%, 100% { left: 20%; transform: translate(-50%, -50%) scaleX(-1); }
+  0%, 8%    { left: calc(var(--bus-w) / 2);        transform: translate(-50%, -50%) scaleX(-1); }
+  42%, 58%  { left: calc(100% - var(--bus-w) / 2); transform: translate(-50%, -50%) scaleX(-1); }
+  60%       { left: calc(100% - var(--bus-w) / 2); transform: translate(-50%, -50%) scaleX(1); }
+  92%, 100% { left: calc(var(--bus-w) / 2);        transform: translate(-50%, -50%) scaleX(1); }
 }
 @keyframes bus-badge-counter-flip {
-  0%, 58%   { transform: translate(-50%, -50%) scaleX(1); }
-  60%, 100% { transform: translate(-50%, -50%) scaleX(-1); }
+  0%, 58%   { transform: translate(-50%, -50%) scaleX(-1); }
+  60%, 100% { transform: translate(-50%, -50%) scaleX(1); }
 }
 @media (prefers-reduced-motion: reduce) {
   .location__route-bus { animation: none; left: 2%; transform: translate(-50%, -50%); }
@@ -1056,7 +1060,7 @@ input:focus, select:focus, textarea:focus {
   .location__grid { grid-template-columns: 1fr; }
   .location__bus { padding: 1.8rem 1.5rem; }
   .location__route { padding: 0.6rem 0 2.2rem; gap: 1.6rem; }
-  .location__route-bus { width: 112px; }
+  .location__route-bus { --bus-w: 112px; }
   .field-row { grid-template-columns: 1fr; }
   .countdown { gap: 0.5rem; padding: 1rem; }
   .countdown__item { min-width: 38px; }
