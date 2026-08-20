@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marina &amp; Jaime · 3 de julio de 2027</title>
+<meta name="description" content="Nos casamos el 3 de julio de 2027 en Alaró, Mallorca. Confirma tu asistencia.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,450;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="nav__mark" href="#inicio">M&amp;J</a>
+  <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="nav__links" id="navLinks">
+    <a href="#la-boda">La boda</a>
+    <a href="#detalles">Detalles</a>
+    <a href="#tiempo">Tiempo</a>
+    <a href="#alojamiento">Alojamiento</a>
+    <a href="#como-llegar">Cómo llegar</a>
+    <a href="#faq">FAQ</a>
+    <a href="#confirmar" class="nav__cta">Confirmar asistencia</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <figure class="hero__photo hero__photo--left reveal">
+      <img src="assets/hero-izquierda.jpg" alt="Marina y Jaime" width="900" height="1200" fetchpriority="high">
+      <svg class="hero__branch hero__branch--left" viewBox="0 0 120 320" aria-hidden="true">
+        <path class="branch-line" d="M60 320 C40 260 80 220 55 170 C30 120 70 80 50 20" fill="none"/>
+        <g class="branch-leaves">
+          <ellipse cx="55" cy="170" rx="16" ry="7" transform="rotate(-35 55 170)"/>
+          <ellipse cx="50" cy="230" rx="16" ry="7" transform="rotate(30 50 230)"/>
+          <ellipse cx="60" cy="110" rx="14" ry="6" transform="rotate(-40 60 110)"/>
+          <ellipse cx="48" cy="70" rx="14" ry="6" transform="rotate(25 48 70)"/>
+          <ellipse cx="50" cy="270" rx="14" ry="6" transform="rotate(-20 50 270)"/>
+        </g>
+      </svg>
+    </figure>
+    <figure class="hero__photo hero__photo--right reveal">
+      <img src="assets/hero-derecha.jpg" alt="Marina y Jaime" width="900" height="1200" fetchpriority="high">
+      <svg class="hero__branch hero__branch--right" viewBox="0 0 120 320" aria-hidden="true">
+        <path class="branch-line" d="M60 320 C80 260 40 220 65 170 C90 120 50 80 70 20" fill="none"/>
+        <g class="branch-leaves">
+          <ellipse cx="65" cy="170" rx="16" ry="7" transform="rotate(35 65 170)"/>
+          <ellipse cx="70" cy="230" rx="16" ry="7" transform="rotate(-30 70 230)"/>
+          <ellipse cx="60" cy="110" rx="14" ry="6" transform="rotate(40 60 110)"/>
+          <ellipse cx="72" cy="70" rx="14" ry="6" transform="rotate(-25 72 70)"/>
+          <ellipse cx="70" cy="270" rx="14" ry="6" transform="rotate(20 70 270)"/>
+        </g>
+      </svg>
+    </figure>
+
+    <div class="hero__content">
+      <p class="eyebrow reveal">Nos casamos</p>
+      <h1 class="hero__names reveal">
+        <span>Marina</span>
+        <span class="amp">&amp;</span>
+        <span>Jaime</span>
+      </h1>
+      <p class="hero__date reveal">03 · 07 · 2027</p>
+      <p class="hero__place reveal">Alaró &nbsp;·&nbsp; Mallorca</p>
+
+      <div class="countdown reveal" id="countdown" aria-live="polite">
+        <div class="countdown__item">
+          <span class="countdown__num" id="cd-days">00</span>
+          <span class="countdown__label">días</span>
+        </div>
+        <div class="countdown__sep">·</div>
+        <div class="countdown__item">
+          <span class="countdown__num" id="cd-hours">00</span>
+          <span class="countdown__label">horas</span>
+        </div>
+        <div class="countdown__sep">·</div>
+        <div class="countdown__item">
+          <span class="countdown__num" id="cd-mins">00</span>
+          <span class="countdown__label">min</span>
+        </div>
+        <div class="countdown__sep">·</div>
+        <div class="countdown__item">
+          <span class="countdown__num" id="cd-secs">00</span>
+          <span class="countdown__label">seg</span>
+        </div>
+      </div>
+
+      <div class="save-date reveal">
+        <a
+          class="save-date__link"
+          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Marina+%26+Jaime&dates=20270703T150000Z/20270703T210000Z&details=%C2%A1Nos+casamos%21+Carretera+Alar%C3%B3-Orient%2C+Km+3%2C+Alar%C3%B3%2C+Mallorca&location=Carretera+Alar%C3%B3-Orient%2C+Km+3%2C+07340+Alar%C3%B3%2C+Illes+Balears&sf=true&output=xml"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Guardar en Google Calendar</a>
+        <span class="save-date__sep" aria-hidden="true">·</span>
+        <button class="save-date__link" id="icsBtn" type="button">Añadir a Apple / Outlook</button>
+      </div>
+    </div>
+
+    <a class="scroll-cue" href="#la-boda" aria-label="Ir a la siguiente sección">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- LA BODA -->
+  <section class="story" id="la-boda">
+    <div class="story__col story__col--text">
+      <span class="section-kicker reveal">Nuestra historia</span>
+      <h2 class="reveal">Un “sí quiero”, rodeados de los nuestros</h2>
+      <p class="story__text reveal">
+        Por fin ha llegado el día que tanto hemos esperado. Queremos celebrarlo
+        rodeados de las personas que más queremos, con calma, con sol de julio y con
+        mucha, mucha alegría. Nos encantaría que formarais parte de esta jornada tan
+        especial para nosotros.
+      </p>
+      <div class="divider reveal" aria-hidden="true">
+        <svg viewBox="0 0 200 24"><path d="M0 12 H80 M120 12 H200" stroke="currentColor" stroke-width="1"/><circle cx="100" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+      </div>
+    </div>
+
+    <div class="story__col story__col--photos">
+      <div class="story__frame reveal">
+        <img class="story__bg-photo is-active" src="assets/story-01.jpg" alt="Marina y Jaime">
+        <img class="story__bg-photo" src="assets/story-02.jpg" alt="">
+        <img class="story__bg-photo" src="assets/story-03.jpg" alt="">
+        <img class="story__bg-photo" src="assets/story-04.jpg" alt="">
+        <img class="story__bg-photo" src="assets/story-05.jpg" alt="">
+        <img class="story__bg-photo" src="assets/story-06.jpg" alt="">
+        <img class="story__bg-photo" src="assets/story-07.jpg" alt="">
+        <img class="story__bg-photo" src="assets/story-08.jpg" alt="">
+        <img class="story__bg-photo" src="assets/story-09.jpg" alt="">
+        <img class="story__bg-photo" src="assets/story-10.jpg" alt="">
+        <img class="story__bg-photo" src="assets/story-11.jpg" alt="">
+        <img class="story__bg-photo" src="assets/story-12.jpg" alt="">
+        <img class="story__bg-photo" src="assets/story-13.jpg" alt="">
+        <img class="story__bg-photo" src="assets/story-14.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- DETALLES + TIEMPO -->
+  <section class="combined">
+    <img class="combined__medallion" src="assets/combined-medallion.jpg" alt="Marina y Jaime" width="675" height="900" loading="lazy">
+
+    <div class="combined__col combined__col--details" id="detalles">
+      <span class="section-kicker reveal">Información</span>
+      <h2 class="reveal">Detalles del gran día</h2>
+
+      <div class="details__grid">
+        <article class="detail-card reveal">
+          <div class="detail-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><rect x="7" y="10" width="34" height="30" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 18h34M15 7v7M33 7v7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="24" cy="28" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <h3>Fecha</h3>
+          <p>Sábado, 3 de julio de 2027</p>
+        </article>
+
+        <article class="detail-card reveal">
+          <div class="detail-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M24 14v10l7 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <h3>Hora</h3>
+          <p>17:00h — ceremonia<br><span class="detail-card__note">(ajustar horario definitivo)</span></p>
+        </article>
+
+        <article class="detail-card reveal">
+          <div class="detail-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 42s14-13.5 14-23.5C38 10.5 31.7 4 24 4S10 10.5 10 18.5C10 28.5 24 42 24 42Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="24" cy="18" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <h3>Lugar</h3>
+          <p>Carretera Alaró–Orient, Km 3<br>07340 Alaró, Mallorca</p>
+        </article>
+
+        <article class="detail-card reveal">
+          <div class="detail-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 6c-6 6-9 12-9 18a9 9 0 0018 0c0-6-3-12-9-18Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M17 26a7 7 0 0014 0" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+          </div>
+          <h3>Vestimenta</h3>
+          <p>Elegante de verano<br><span class="detail-card__note">tonos tierra y frescos bienvenidos</span></p>
+        </article>
+      </div>
+    </div>
+
+    <div class="combined__col combined__col--weather" id="tiempo">
+      <span class="section-kicker reveal">Para que sepas qué maleta hacer</span>
+      <h2 class="reveal">Tiempo previsto</h2>
+
+      <div class="weather__grid">
+      <article class="weather-card reveal">
+        <div class="weather-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M24 4v6M24 38v6M44 24h-6M10 24H4M37.5 10.5l-4.2 4.2M14.7 33.3l-4.2 4.2M37.5 37.5l-4.2-4.2M14.7 14.7l-4.2-4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Máxima media</h3>
+        <p>29–31°C</p>
+      </article>
+
+      <article class="weather-card reveal">
+        <div class="weather-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M32 26a12 12 0 01-15-15A12.5 12.5 0 1032 26Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Mínima media</h3>
+        <p>18–19°C</p>
+      </article>
+
+      <article class="weather-card reveal">
+        <div class="weather-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M24 6C15 15 10 21 10 27a14 14 0 0028 0c0-6-5-12-14-21Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M17 29a7 7 0 007 7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Probabilidad de lluvia</h3>
+        <p>~4% <span class="weather-card__note">prácticamente nula</span></p>
+      </article>
+
+      <article class="weather-card reveal">
+        <div class="weather-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="30" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M24 4v6M11 12l4 4M37 12l-4 4M4 30h6M38 30h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Sol</h3>
+        <p>~11h al día <span class="weather-card__note">cielos despejados</span></p>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALOJAMIENTO -->
+  <section class="stay" id="alojamiento">
+    <span class="section-kicker reveal">Para quienes vengáis de fuera</span>
+    <h2 class="reveal">¿Dónde alojarse?</h2>
+    <p class="stay__intro reveal">
+      Alaró es un pueblo pequeño, así que si venís de fuera os recomendamos
+      reservar con tiempo. Aquí van algunas opciones a poca distancia de la
+      boda:
+    </p>
+
+    <div class="stay__grid">
+      <article class="stay-card stay-card--featured reveal">
+        <img class="stay-card__photo" src="assets/stay-solivaret.jpg" alt="Piscina del Hotel Rural S'Olivaret &amp; Spa" width="700" height="466" loading="lazy">
+        <div class="stay-card__body">
+          <span class="stay-card__badge">Es la propia finca de la boda</span>
+          <h3>Hotel Rural S'Olivaret &amp; Spa</h3>
+          <p>Antigua prensa de aceite reconvertida, con piscina infinita, jacuzzi y vistas a la sierra — ¡el sitio donde nos casamos! Os encantará quedaros a dormir allí mismo.</p>
+          <p class="stay-card__promo">Código promocional para la boda: <strong>MARINAYJAIME27</strong></p>
+          <a class="stay-card__link" href="https://www.google.com/maps/search/?api=1&query=Hotel+Rural+S%27Olivaret+%26+Spa+Alar%C3%B3+Mallorca" target="_blank" rel="noopener noreferrer">
+            Ver en Google Maps
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="stay-card reveal">
+        <img class="stay-card__photo" src="assets/stay-canbeia.jpg" alt="Piscina de Casa Rural Ca'n Beia" width="700" height="365" loading="lazy">
+        <div class="stay-card__body">
+          <h3>Casa Rural Ca'n Beia</h3>
+          <p>Molino de aceite del s. XIX en el propio pueblo de Alaró, con sauna y piscina de temporada.</p>
+          <a class="stay-card__link" href="https://www.google.com/maps/search/?api=1&query=Casa+Rural+Ca%27n+Beia+Alar%C3%B3+Mallorca" target="_blank" rel="noopener noreferrer">
+            Ver en Google Maps
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="stay-card reveal">
+        <img class="stay-card__photo" src="assets/stay-canxim.jpg" alt="Habitación de Can Xim · Turismo de Interior" width="700" height="365" loading="lazy">
+        <div class="stay-card__body">
+          <h3>Can Xim · Turismo de Interior</h3>
+          <p>En pleno pueblo de Alaró, con piscina y restaurante à la carte.</p>
+          <a class="stay-card__link" href="https://www.google.com/maps/search/?api=1&query=Can+Xim+Turismo+de+Interior+Alar%C3%B3+Mallorca" target="_blank" rel="noopener noreferrer">
+            Ver en Google Maps
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="stay-card reveal">
+        <img class="stay-card__photo" src="assets/stay-elnido.jpg" alt="Habitación de El Nido de Alaró" width="700" height="365" loading="lazy">
+        <div class="stay-card__body">
+          <h3>El Nido de Alaró</h3>
+          <p>Turismo de interior con piscina al aire libre, jardín y terraza, en el pueblo.</p>
+          <a class="stay-card__link" href="https://www.google.com/maps/search/?api=1&query=El+Nido+de+Alar%C3%B3+Turismo+de+Interior+Mallorca" target="_blank" rel="noopener noreferrer">
+            Ver en Google Maps
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <a class="stay__more reveal" href="https://www.booking.com/city/es/alaro.html" target="_blank" rel="noopener noreferrer">Ver más alojamientos en Alaró →</a>
+  </section>
+
+  <!-- COMO LLEGAR -->
+  <section class="location" id="como-llegar">
+    <div class="location__inner">
+      <div class="location__text">
+        <span class="section-kicker reveal">Ubicación</span>
+        <h2 class="reveal">Cómo llegar</h2>
+        <p class="reveal">
+          Nos casamos en pleno corazón de la Serra de Tramuntana, en la carretera
+          que une Alaró con Orient. Un rincón entre olivos, a solo unos minutos
+          del pueblo.
+        </p>
+        <address class="location__address reveal">
+          Carretera Alaró–Orient, Km 3<br>
+          07340 Alaró, Mallorca<br>
+          Illes Balears
+        </address>
+        <a
+          class="btn btn--primary reveal"
+          id="directionsBtn"
+          href="https://www.google.com/maps/dir/?api=1&destination=Carretera+Alar%C3%B3-Orient%2C+Km+3%2C+07340+Alar%C3%B3%2C+Illes+Balears"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Cómo llegar en Google Maps
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="location__map reveal">
+        <iframe
+          title="Mapa de la ubicación de la boda: Carretera Alaró-Orient, Km 3, Alaró, Mallorca"
+          src="https://www.google.com/maps?q=Carretera+Alar%C3%B3-Orient%2C+Km+3%2C+07340+Alar%C3%B3%2C+Illes+Balears&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsvp" id="confirmar">
+    <div class="rsvp__inner">
+      <span class="section-kicker reveal">Antes del 1 de mayo de 2027</span>
+      <h2 class="reveal">Confirma tu asistencia</h2>
+      <p class="rsvp__intro reveal">
+        Nos haría mucha ilusión contar contigo. Rellena el formulario para que
+        podamos organizarlo todo con cariño.
+      </p>
+
+      <div class="rsvp__layout">
+        <!--
+          Este formulario envía las respuestas a una Google Sheet mediante Google
+          Apps Script. La URL se configura en script.js (constante SHEET_SCRIPT_URL),
+          no aquí. Instrucciones completas en README.md.
+        -->
+        <form class="rsvp-form reveal" id="rsvpForm">
+
+          <div class="field">
+            <label for="name">Nombre y apellidos *</label>
+            <input type="text" id="name" name="Nombre" required autocomplete="name">
+          </div>
+
+          <div class="field">
+            <label for="email">Correo electrónico *</label>
+            <input type="email" id="email" name="Email" required autocomplete="email">
+          </div>
+
+          <fieldset class="field field--radio">
+            <legend>¿Asistirás? *</legend>
+            <div class="radio-group">
+              <label class="radio-pill">
+                <input type="radio" name="Asistencia" value="Sí, allí estaré" required>
+                <span>Sí, allí estaré</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="Asistencia" value="No podré asistir" required>
+                <span>No podré asistir</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="transport">¿Necesitarás transporte? *</label>
+            <select id="transport" name="Transporte" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="Sí">Sí</option>
+              <option value="No">No</option>
+              <option value="Aún no lo sé">Aún no lo sé</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="allergies">Alergias o restricciones alimentarias</label>
+            <textarea id="allergies" name="Alergias" rows="2" placeholder="Celiaquía, intolerancias, vegetariano/a, vegano/a…"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="song">Una canción que no puede faltar en la fiesta 🎶</label>
+            <input type="text" id="song" name="Canción" placeholder="Título — Artista">
+          </div>
+
+          <div class="field">
+            <label for="message">Un mensaje para los novios</label>
+            <textarea id="message" name="Mensaje" rows="3" placeholder="Lo que quieras contarnos…"></textarea>
+          </div>
+
+          <!-- honeypot anti-spam, oculto -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="btn btn--primary btn--submit">
+            <span class="btn__label">Enviar confirmación</span>
+            <span class="btn__loading">Enviando…</span>
+          </button>
+
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="rsvp-stats" id="rsvpStats" aria-live="polite">
+          <article class="stat-card">
+            <div class="stat-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><circle cx="17" cy="16" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="33" cy="16" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 40c0-8 6-13 13-13s13 5 13 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M26 27c7 0 13 5 13 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <p class="stat-card__number" id="statConfirmados">–</p>
+            <p class="stat-card__label">personas confirmadas</p>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="24" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 22h36" stroke="currentColor" stroke-width="1.6"/><circle cx="15" cy="34" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="33" cy="34" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 16h6M28 16h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <p class="stat-card__number" id="statTransporte">–</p>
+            <p class="stat-card__label">necesitan transporte</p>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M18 34V10l20-5v24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="14" cy="36" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="34" cy="31" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            </div>
+            <p class="stat-card__number" id="statCanciones">–</p>
+            <p class="stat-card__label">canciones enviadas</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <span class="section-kicker reveal">Antes de que preguntes</span>
+    <h2 class="reveal">Preguntas frecuentes</h2>
+
+    <div class="faq__list">
+      <details class="faq-item reveal" open>
+        <summary>¿Hay aparcamiento?</summary>
+        <p>Sí, hay aparcamiento disponible en el mismo recinto de la finca — no hace falta buscar sitio en el pueblo.</p>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>¿Puedo llevar a mis hijos?</summary>
+        <p>Es una boda solo para adultos. Sabemos que a veces complica la logística, ¡y os lo agradecemos muchísimo!</p>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>¿Dónde puedo alojarme?</summary>
+        <p>Hemos recopilado algunas opciones cerca de Alaró en la sección <a href="#alojamiento">Alojamiento</a>, un poco más arriba.</p>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>¿Habrá transporte de vuelta?</summary>
+        <p>Sí, organizaremos autobús de ida y vuelta desde el pueblo de Alaró. Indícanoslo en el formulario de confirmación para saber cuántos autobuses necesitamos.</p>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>¿Cuál es el código de vestimenta?</summary>
+        <p>Elegante de verano — tonos tierra y frescos bienvenidos. Nada de tacones de aguja, ¡el terreno es de campo!</p>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>¿Hasta cuándo puedo confirmar mi asistencia?</summary>
+        <p>Antes del 1 de mayo de 2027, por favor — nos ayuda muchísimo a organizarlo todo con tiempo.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <img class="footer__photo" src="assets/footer-pareja.jpg" alt="Marina y Jaime" width="1050" height="1400" loading="lazy">
+  <p class="footer__mark">M &amp; J</p>
+  <p>3 de julio de 2027 · Alaró, Mallorca</p>
+  <p class="footer__note">Con todo nuestro cariño — Marina &amp; Jaime</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
