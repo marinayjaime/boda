@@ -1053,6 +1053,8 @@ input:focus, select:focus, textarea:focus {
   }
   .hero__content { order: 1; flex: 1 1 100%; }
   .hero__photo .hero__branch { display: none; }
+  .hero { padding-bottom: 7.5rem; }
+  .save-date { flex-direction: column; gap: 0.6rem; }
 
   .details__grid { grid-template-columns: 1fr; }
   .weather__grid { grid-template-columns: 1fr; }
