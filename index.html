@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,450;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -123,7 +123,7 @@
         <span class="save-date__links">
           <a
             class="save-date__link"
-            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Marina+%26+Jaime&dates=20270703T150000Z/20270703T210000Z&details=%C2%A1Nos+casamos%21+Carretera+Alar%C3%B3-Orient%2C+Km+3%2C+Alar%C3%B3%2C+Mallorca&location=Carretera+Alar%C3%B3-Orient%2C+Km+3%2C+07340+Alar%C3%B3%2C+Illes+Balears&sf=true&output=xml"
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Marina+%26+Jaime&dates=20270703T150000Z/20270703T210000Z&details=%C2%A1Nos+casamos%21+Ceremonia+en+la+Parroquia+de+Santa+Teresa+del+Ni%C3%B1o+Jes%C3%BAs+%28Palma%29.+Celebraci%C3%B3n+en+Carretera+Alar%C3%B3-Orient%2C+Km+3%2C+Alar%C3%B3.&location=Carrer+de+Pilar+Juncosa%2C+13%2C+07014+Palma%2C+Illes+Balears&sf=true&output=xml"
             target="_blank"
             rel="noopener noreferrer"
           >Añadir a Google Calendar</a>
@@ -204,7 +204,7 @@
             <svg viewBox="0 0 48 48"><path d="M24 42s14-13.5 14-23.5C38 10.5 31.7 4 24 4S10 10.5 10 18.5C10 28.5 24 42 24 42Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="24" cy="18" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
           </div>
           <h3>Lugar</h3>
-          <p>Carretera Alaró–Orient, Km 3<br>07340 Alaró, Mallorca</p>
+          <p>Ceremonia en Palma, celebración en Alaró<br><span class="detail-card__note">ver detalle en "Cómo llegar"</span></p>
         </article>
 
         <article class="detail-card reveal">
@@ -274,7 +274,7 @@
           <span class="stay-card__badge">Es la propia finca de la boda</span>
           <h3>Hotel Rural S'Olivaret &amp; Spa</h3>
           <p>Antigua prensa de aceite reconvertida, con piscina infinita, jacuzzi y vistas a la sierra — ¡el sitio donde nos casamos! Os encantará quedaros a dormir allí mismo.</p>
-          <p class="stay-card__promo">Código promocional para la boda: <strong>Próximamente</strong></p>
+          <p class="stay-card__promo">Código promocional para los asistentes de la boda: <strong>Próximamente</strong></p>
           <a class="stay-card__link" href="https://www.google.com/maps/search/?api=1&query=Hotel+Rural+S%27Olivaret+%26+Spa+Alar%C3%B3+Mallorca" target="_blank" rel="noopener noreferrer">
             Ver en Google Maps
             <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -324,23 +324,61 @@
 
   <!-- COMO LLEGAR -->
   <section class="location" id="como-llegar">
-    <div class="location__inner">
+    <div class="location__intro">
+      <span class="section-kicker reveal">Ubicación</span>
+      <h2 class="reveal">Cómo llegar</h2>
+      <p class="reveal">
+        La boda tiene dos escenarios: la ceremonia en Palma y la celebración en
+        pleno corazón de la Serra de Tramuntana, entre Alaró y Orient. No os
+        preocupéis por la logística — habrá autobús organizado que hace todo el
+        trayecto por vosotros.
+      </p>
+    </div>
+
+    <div class="location__venue reveal">
       <div class="location__text">
-        <span class="section-kicker reveal">Ubicación</span>
-        <h2 class="reveal">Cómo llegar</h2>
-        <p class="reveal">
-          Nos casamos en pleno corazón de la Serra de Tramuntana, en la carretera
-          que une Alaró con Orient. Un rincón entre olivos, a solo unos minutos
-          del pueblo.
-        </p>
-        <address class="location__address reveal">
-          Carretera Alaró–Orient, Km 3<br>
-          07340 Alaró, Mallorca<br>
-          Illes Balears
+        <span class="location__venue-kicker">La ceremonia</span>
+        <h3>Parroquia de Santa Teresa del Niño Jesús</h3>
+        <address class="location__address">
+          Carrer de Pilar Juncosa, 13, Ponent<br>
+          07014 Palma, Illes Balears
         </address>
         <a
-          class="btn btn--primary reveal"
-          id="directionsBtn"
+          class="btn btn--primary"
+          href="https://www.google.com/maps/dir/?api=1&destination=Carrer+de+Pilar+Juncosa%2C+13%2C+07014+Palma%2C+Illes+Balears"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Cómo llegar en Google Maps
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="location__map">
+        <iframe
+          title="Mapa de la ceremonia: Parroquia de Santa Teresa del Niño Jesús, Palma"
+          src="https://www.google.com/maps?q=Parroquia+de+Santa+Teresa+del+Ni%C3%B1o+Jes%C3%BAs%2C+Carrer+de+Pilar+Juncosa+13%2C+Palma&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="location__bus reveal">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M18 34V10l20-5v24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="14" cy="36" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="34" cy="31" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      <p>Autobús organizado: Palma (iglesia) → Alaró (finca) → Palma, de vuelta al acabar la fiesta.</p>
+    </div>
+
+    <div class="location__venue location__venue--reverse reveal">
+      <div class="location__text">
+        <span class="location__venue-kicker">La celebración</span>
+        <h3>Hotel Rural S'Olivaret &amp; Spa</h3>
+        <address class="location__address">
+          Carretera Alaró–Orient, Km 3<br>
+          07340 Alaró, Illes Balears
+        </address>
+        <a
+          class="btn btn--primary"
           href="https://www.google.com/maps/dir/?api=1&destination=Carretera+Alar%C3%B3-Orient%2C+Km+3%2C+07340+Alar%C3%B3%2C+Illes+Balears"
           target="_blank"
           rel="noopener noreferrer"
@@ -350,9 +388,9 @@
         </a>
       </div>
 
-      <div class="location__map reveal">
+      <div class="location__map">
         <iframe
-          title="Mapa de la ubicación de la boda: Carretera Alaró-Orient, Km 3, Alaró, Mallorca"
+          title="Mapa de la celebración: Carretera Alaró-Orient, Km 3, Alaró, Mallorca"
           src="https://www.google.com/maps?q=Carretera+Alar%C3%B3-Orient%2C+Km+3%2C+07340+Alar%C3%B3%2C+Illes+Balears&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
@@ -490,8 +528,8 @@
       </details>
 
       <details class="faq-item reveal">
-        <summary>¿Habrá transporte de vuelta?</summary>
-        <p>Sí, organizaremos autobús de ida y vuelta desde el pueblo de Alaró. Indícanoslo en el formulario de confirmación para saber cuántos autobuses necesitamos.</p>
+        <summary>¿Habrá transporte?</summary>
+        <p>Sí, organizaremos autobús que hace todo el trayecto: sale de la ceremonia en Palma hacia la finca en Alaró, y de vuelta a Palma al acabar la fiesta. Indícanoslo en el formulario de confirmación para saber cuántos autobuses necesitamos.</p>
       </details>
 
       <details class="faq-item reveal">
@@ -515,6 +553,6 @@
   <p class="footer__note">Con todo nuestro cariño — Marina &amp; Jaime</p>
 </footer>
 
-<script src="script.js?v=3"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>

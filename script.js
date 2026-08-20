@@ -69,8 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'DTSTART:20270703T150000Z',
         'DTEND:20270703T210000Z',
         'SUMMARY:Boda de Marina & Jaime',
-        'DESCRIPTION:¡Nos casamos! Carretera Alaró-Orient\\, Km 3\\, Alaró\\, Mallorca.',
-        'LOCATION:Carretera Alaró-Orient\\, Km 3\\, 07340 Alaró\\, Illes Balears',
+        'DESCRIPTION:¡Nos casamos! Ceremonia en la Parroquia de Santa Teresa del Niño Jesús (Palma). Celebración en Carretera Alaró-Orient\\, Km 3\\, Alaró.',
+        'LOCATION:Carrer de Pilar Juncosa\\, 13\\, 07014 Palma\\, Illes Balears',
         'END:VEVENT',
         'END:VCALENDAR',
       ].join('\r\n');
