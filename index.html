@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,450;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
@@ -110,14 +110,26 @@
       </div>
 
       <div class="save-date reveal">
-        <a
-          class="save-date__link"
-          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Marina+%26+Jaime&dates=20270703T150000Z/20270703T210000Z&details=%C2%A1Nos+casamos%21+Carretera+Alar%C3%B3-Orient%2C+Km+3%2C+Alar%C3%B3%2C+Mallorca&location=Carretera+Alar%C3%B3-Orient%2C+Km+3%2C+07340+Alar%C3%B3%2C+Illes+Balears&sf=true&output=xml"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Guardar en Google Calendar</a>
-        <span class="save-date__sep" aria-hidden="true">·</span>
-        <button class="save-date__link" id="icsBtn" type="button">Añadir a Apple Calendar</button>
+        <svg class="save-date__icon" viewBox="0 0 40 44" aria-hidden="true">
+          <rect x="9" y="1.5" width="3" height="7" rx="1.5" fill="currentColor" opacity="0.55"/>
+          <rect x="28" y="1.5" width="3" height="7" rx="1.5" fill="currentColor" opacity="0.55"/>
+          <rect x="2.5" y="6" width="35" height="35.5" rx="5" fill="var(--bg-card)" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M2.5 17.5h35" stroke="currentColor" stroke-width="1.4"/>
+          <rect x="2.5" y="6" width="35" height="11.5" rx="5" fill="var(--terracotta-dark)"/>
+          <rect x="2.5" y="10" width="35" height="7.5" fill="var(--terracotta-dark)"/>
+          <text x="20" y="14.3" text-anchor="middle" font-family="'Jost', sans-serif" font-size="6.5" font-weight="600" letter-spacing="1" fill="#fff8ef">JUL</text>
+          <text x="20" y="34" text-anchor="middle" font-family="'Lora', serif" font-size="15.5" font-weight="500" fill="var(--ink)">3</text>
+        </svg>
+        <span class="save-date__links">
+          <a
+            class="save-date__link"
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Marina+%26+Jaime&dates=20270703T150000Z/20270703T210000Z&details=%C2%A1Nos+casamos%21+Carretera+Alar%C3%B3-Orient%2C+Km+3%2C+Alar%C3%B3%2C+Mallorca&location=Carretera+Alar%C3%B3-Orient%2C+Km+3%2C+07340+Alar%C3%B3%2C+Illes+Balears&sf=true&output=xml"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Añadir a Google Calendar</a>
+          <span class="save-date__sep" aria-hidden="true">·</span>
+          <button class="save-date__link" id="icsBtn" type="button">Añadir a Apple Calendar</button>
+        </span>
       </div>
     </div>
 
@@ -503,6 +515,6 @@
   <p class="footer__note">Con todo nuestro cariño — Marina &amp; Jaime</p>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js?v=3"></script>
 </body>
 </html>
