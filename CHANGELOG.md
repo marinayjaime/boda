@@ -4,13 +4,10 @@ Historial de todo lo que se ha ido haciendo en el proyecto, sesión a sesión. L
 
 ## Ideas propuestas, aún sin implementar
 
-Sugeridas el 2026-08-18, pendientes de que el usuario diga cuáles quiere:
-
-- **Email de confirmación automático al invitado** al rellenar el RSVP (vía `MailApp` en el mismo Apps Script), además de guardarlo en la Sheet.
-- Favicon (icono de pestaña del navegador) — no tiene ninguno todavía.
-- Cerrar el formulario automáticamente pasado el 1 de mayo de 2027, con mensaje de plazo terminado.
-- Botón para compartir directamente por WhatsApp.
+- Favicon (icono de pestaña del navegador) — no tiene ninguno todavía. Aparcado de momento (2026-08-20), retomar si el usuario lo pide.
 - Revisión de accesibilidad (contraste, navegación por teclado en menú y FAQ).
+
+Descartadas (2026-08-20, decisión explícita del usuario, no reabrir sin que lo pida): email de confirmación automático al invitado, cierre automático del formulario tras el 1 de mayo de 2027, botón de compartir por WhatsApp.
 
 ## 2026-08-20
 
