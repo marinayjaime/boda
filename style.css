@@ -379,30 +379,6 @@ section { position: relative; }
   padding: clamp(4.5rem, 10vw, 8rem) clamp(1.5rem, 6vw, 4rem);
 }
 
-/* ---------- separador ornamental (ramas de olivo + sello) ---------- */
-.ornament-divider {
-  background: var(--bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2.2rem clamp(1.2rem, 6vw, 4rem);
-}
-.ornament-divider__branch {
-  width: clamp(70px, 14vw, 170px);
-  height: 22px;
-  flex: 1 1 auto;
-  max-width: 170px;
-  color: var(--olive-dark);
-}
-.ornament-divider__branch--right { transform: scaleX(-1); }
-.ornament-divider__seal {
-  width: 38px;
-  height: 38px;
-  flex-shrink: 0;
-  margin: 0 1rem;
-  filter: drop-shadow(0 5px 10px rgba(54, 45, 32, 0.3));
-}
-
 /* ---------- story ---------- */
 .story {
   display: grid;
@@ -436,12 +412,6 @@ section { position: relative; }
   font-size: 1.05rem;
   line-height: 1.85;
 }
-.divider {
-  width: 200px;
-  margin: 2.6rem auto 0;
-  color: var(--gold);
-}
-
 .story__frame {
   position: relative;
   width: 100%;
