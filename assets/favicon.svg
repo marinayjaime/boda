@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <radialGradient id="waxGradient" cx="35%" cy="28%" r="80%">
+      <stop offset="0%" stop-color="#d97a45"/>
+      <stop offset="55%" stop-color="#96461f"/>
+      <stop offset="100%" stop-color="#6e330f"/>
+    </radialGradient>
+  </defs>
+  <path d="M 93.22,50.00 C 92.78,56.36 90.82,62.60 88.26,68.42 C 85.70,74.24 82.66,81.15 77.85,84.92 C 73.03,88.69 65.65,89.71 59.37,91.06 C 53.09,92.42 46.25,94.24 40.17,93.05 C 34.10,91.86 27.61,88.07 22.93,83.94 C 18.26,79.80 14.94,73.90 12.11,68.25 C 9.28,62.59 5.95,56.08 5.97,50.00 C 5.98,43.92 9.39,37.49 12.19,31.79 C 14.99,26.10 18.01,19.63 22.75,15.83 C 27.49,12.02 34.52,10.11 40.63,8.95 C 46.74,7.79 53.29,7.71 59.39,8.86 C 65.49,10.01 71.97,12.29 77.23,15.86 C 82.48,19.43 88.27,24.59 90.94,30.29 C 93.60,35.98 93.67,43.64 93.22,50.00 Z"
+    fill="url(#waxGradient)"/>
+  <circle cx="50" cy="50" r="35" fill="none" stroke="rgba(244,238,225,0.4)" stroke-width="1"/>
+  <text x="50" y="61" text-anchor="middle" font-family="Georgia, 'Iowan Old Style', 'Times New Roman', serif" font-style="italic" font-weight="700" font-size="32" fill="#fbf7ee">M&amp;J</text>
+</svg>

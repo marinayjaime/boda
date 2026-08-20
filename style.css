@@ -166,15 +166,22 @@ p { margin: 0; }
 .hero__photo--left { --tilt: -3deg; order: 1; }
 .hero__photo--right { --tilt: 3deg; order: 3; }
 
-.hero__photo img {
-  display: block;
+.hero__photo-clip {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 22%;
+  overflow: hidden;
   border-radius: 50% 50% 6px 6px / 32% 32% 6px 6px;
   border: 4px solid var(--bg-card);
   box-shadow: 0 30px 55px -22px rgba(54, 45, 32, 0.5), 0 0 0 1px rgba(182, 137, 63, 0.32);
+}
+.hero__photo img {
+  display: block;
+  position: relative;
+  top: -9%;
+  width: 100%;
+  height: 118%;
+  object-fit: cover;
+  object-position: center 22%;
 }
 
 .hero__photo .hero__branch {
@@ -370,6 +377,30 @@ section { position: relative; }
 #la-boda, #detalles, #tiempo, #alojamiento, #como-llegar, #faq, #confirmar { scroll-margin-top: 84px; }
 .story, .stay, .location, .faq, .rsvp {
   padding: clamp(4.5rem, 10vw, 8rem) clamp(1.5rem, 6vw, 4rem);
+}
+
+/* ---------- separador ornamental (ramas de olivo + sello) ---------- */
+.ornament-divider {
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.2rem clamp(1.2rem, 6vw, 4rem);
+}
+.ornament-divider__branch {
+  width: clamp(70px, 14vw, 170px);
+  height: 22px;
+  flex: 1 1 auto;
+  max-width: 170px;
+  color: var(--olive-dark);
+}
+.ornament-divider__branch--right { transform: scaleX(-1); }
+.ornament-divider__seal {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  margin: 0 1rem;
+  filter: drop-shadow(0 5px 10px rgba(54, 45, 32, 0.3));
 }
 
 /* ---------- story ---------- */
@@ -1004,12 +1035,12 @@ input:focus, select:focus, textarea:focus {
   border: 5px solid rgba(244, 238, 225, 0.5);
   box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.65);
 }
-.footer__mark {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.6rem;
-  color: var(--cream);
-  margin-bottom: 0.8rem;
+.footer__seal {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.1rem;
+  display: block;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45));
 }
 .footer__note { margin-top: 0.4rem; color: #a89e88; }
 

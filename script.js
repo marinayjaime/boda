@@ -11,6 +11,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------- Parallax sutil en las fotos del hero ---------- */
+  const heroSection = document.querySelector('.hero');
+  const heroPhotoImgs = document.querySelectorAll('.hero__photo-img');
+  if (heroSection && heroPhotoImgs.length && !reducedMotion) {
+    let parallaxTicking = false;
+    const updateParallax = () => {
+      const rect = heroSection.getBoundingClientRect();
+      if (rect.bottom > 0 && rect.top < window.innerHeight) {
+        const offset = Math.max(-1, Math.min(1, -rect.top / window.innerHeight)) * 26;
+        heroPhotoImgs.forEach((img) => {
+          img.style.transform = `translateY(${offset}px)`;
+        });
+      }
+      parallaxTicking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!parallaxTicking) {
+        requestAnimationFrame(updateParallax);
+        parallaxTicking = true;
+      }
+    }, { passive: true });
+    updateParallax();
+  }
+
   /* ---------- Fondo de fotos en "Nuestra historia" ---------- */
   const storyPhotos = document.querySelectorAll('.story__bg-photo');
   if (storyPhotos.length > 1) {
