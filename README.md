@@ -59,9 +59,9 @@ y visita `http://localhost:8000`.
 
 ## Publicada en GitHub Pages
 
-La web ya está publicada en: **https://marinayjaime.github.io/Boda-Marina-y-Jaime/**
+La web ya está publicada en: **https://marinayjaime.github.io/boda/**
 
-Repo: [github.com/marinayjaime/Boda-Marina-y-Jaime](https://github.com/marinayjaime/Boda-Marina-y-Jaime) (rama `main`, GitHub Pages sirviendo desde la raíz `/`).
+Repo: [github.com/marinayjaime/boda](https://github.com/marinayjaime/boda) (rama `main`, GitHub Pages sirviendo desde la raíz `/`).
 
 Para publicar cambios nuevos, desde la carpeta del proyecto:
 

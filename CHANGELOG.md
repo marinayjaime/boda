@@ -14,8 +14,10 @@ Sugeridas el 2026-08-18, pendientes de que el usuario diga cuáles quiere:
 
 ## 2026-08-20
 
+- **Repo renombrado a `boda`** (antes `Boda-Marina-y-Jaime`) para acortar la URL: ahora es https://marinayjaime.github.io/boda/. Actualizadas todas las referencias (meta tags OG/Twitter en `index.html`, `README.md`, remote de git local).
+- **Miniatura simplificada**: se quitó el texto/nombre superpuesto de `assets/og-image.jpg` porque WhatsApp recorta la miniatura y solo se veía un fragmento del diseño con las letras cortadas. Ahora es directamente la foto de la pareja a pantalla completa (1200×630), sin texto.
 - **Miniatura al compartir el enlace** (Open Graph/Twitter Card): diseñada una imagen a medida (`assets/og-image.jpg`, 1200×630) con la tipografía y paleta del sitio (Lora + Jost, tonos tierra/terracota/oliva) y una foto de la pareja, generada renderizando un HTML propio con Chrome headless. Añadidas las meta tags `og:*` y `twitter:*` en `index.html` apuntando a la URL pública de GitHub Pages. Ahora compartir el link por WhatsApp/email/redes muestra una tarjeta con foto en vez de nada.
-- **Web publicada de verdad**: repo git creado (`Boda-Marina-y-Jaime`, antes no existía control de versiones) y desplegado en **GitHub Pages**. URL pública: https://marinayjaime.github.io/Boda-Marina-y-Jaime/ — repo en https://github.com/marinayjaime/Boda-Marina-y-Jaime. A partir de ahora, cualquier cambio se publica haciendo `git add -A && git commit -m "..." && git push` (GitHub Pages redespliega solo en 1–2 min). Instrucciones actualizadas en `README.md`.
+- **Web publicada de verdad**: repo git creado (`boda`, antes no existía control de versiones) y desplegado en **GitHub Pages**. URL pública: https://marinayjaime.github.io/boda/ — repo en https://github.com/marinayjaime/boda. A partir de ahora, cualquier cambio se publica haciendo `git add -A && git commit -m "..." && git push` (GitHub Pages redespliega solo en 1–2 min). Instrucciones actualizadas en `README.md`.
 
 ## 2026-08-18
 
