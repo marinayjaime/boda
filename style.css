@@ -675,15 +675,63 @@ section { position: relative; }
   max-width: 620px;
   margin: 2.5rem auto 0;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 1.1rem;
   padding: 1.3rem 1.6rem;
   background: rgba(244, 238, 225, 0.06);
   border: 1px solid rgba(244, 238, 225, 0.16);
   border-radius: 16px;
 }
-.location__bus svg { width: 34px; height: 34px; flex-shrink: 0; color: var(--gold); }
 .location__bus p { color: #cfc8b6; font-size: 0.92rem; line-height: 1.6; text-align: left; }
+
+.location__route { display: flex; align-items: center; gap: 0.7rem; }
+.location__route-city {
+  flex-shrink: 0;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.location__route-track {
+  position: relative;
+  flex: 1;
+  height: 2px;
+  margin: 0 2px;
+  background-image: repeating-linear-gradient(to right, rgba(244, 238, 225, 0.4) 0 6px, transparent 6px 14px);
+}
+.location__route-track::before,
+.location__route-track::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  transform: translate(-50%, -50%);
+}
+.location__route-track::before { left: 0; }
+.location__route-track::after { left: 100%; }
+.location__route-bus {
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  width: 28px;
+  height: auto;
+  color: var(--gold);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+  animation: bus-route 9s ease-in-out infinite;
+}
+@keyframes bus-route {
+  0%, 8%    { left: 2%;  transform: translate(-50%, -50%) scaleX(1); }
+  42%, 58%  { left: 98%; transform: translate(-50%, -50%) scaleX(1); }
+  60%       { left: 98%; transform: translate(-50%, -50%) scaleX(-1); }
+  92%, 100% { left: 2%;  transform: translate(-50%, -50%) scaleX(-1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .location__route-bus { animation: none; left: 2%; transform: translate(-50%, -50%); }
+}
 
 /* ---------- buttons ---------- */
 .btn {
@@ -993,7 +1041,6 @@ input:focus, select:focus, textarea:focus {
   .weather__grid { grid-template-columns: 1fr; }
   .stay__grid { grid-template-columns: 1fr; }
   .location__grid { grid-template-columns: 1fr; }
-  .location__bus { flex-direction: column; text-align: center; }
   .field-row { grid-template-columns: 1fr; }
   .countdown { gap: 0.5rem; padding: 1rem; }
   .countdown__item { min-width: 38px; }
