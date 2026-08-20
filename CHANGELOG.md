@@ -11,6 +11,8 @@ Descartadas (2026-08-20, decisión explícita del usuario, no reabrir sin que lo
 
 ## 2026-08-20
 
+- **"Ver más alojamientos"** ya no apunta solo a Alaró sin fechas — ahora es una búsqueda en Booking.com de **Mallorca** con el checkin/checkout del 3 al 4 de julio de 2027 (la noche de la boda) ya rellenados.
+- **Autobús animado más grande**, con una franja terracota en el costado rotulada "M&J" (serigrafía), a petición del usuario tras ver la primera versión.
 - **Autobús animado**: en el aviso "Autobús organizado" de "Cómo llegar", un icono de autobús recorre en bucle una línea punteada de Palma a Alaró, se gira al llegar a cada extremo y vuelve — visualiza el trayecto de ida y vuelta descrito en el texto. Respeta `prefers-reduced-motion`.
 - **FAQ**: la respuesta de "¿Cuál es el código de vestimenta?" ahora añade "(Si vienes en bañador no te juzgaremos)"; nueva pregunta "¿Hará mucho calor?" con respuesta graciosa sobre el peinado.
 - **"Cómo llegar" rediseñada a dos columnas** lado a lado (La ceremonia / La celebración), igual que "Detalles del gran día" y "Tiempo previsto" — antes eran dos bloques apilados a todo lo ancho con mucho scroll vertical; ahora cada columna tiene su dirección, botón y mapa, con el aviso del autobús como franja compacta al final.
