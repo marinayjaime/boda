@@ -11,6 +11,7 @@ Descartadas (2026-08-20, decisión explícita del usuario, no reabrir sin que lo
 
 ## 2026-08-20
 
+- **Recuadro del autobús mucho más grande**: el usuario pidió agrandar todo el conjunto (recuadro, texto "Palma"/"Alaró" y el propio autobús). Se rediseñó para poner las dos ciudades en una fila arriba (space-between) en vez de a los lados de la línea, así el autobús puede ser bastante más grande (110px escritorio / 88px móvil) sin arriesgar solaparse con el texto en pantallas estrechas — con el diseño anterior (ciudades a los lados) sí llegaba a solaparse en 375px. Ofrecido también animar un PNG de autobús que el usuario pueda pasar, en vez del SVG dibujado a mano, si lo prefiere más adelante.
 - **"Ver más alojamientos"** ya no apunta solo a Alaró sin fechas — ahora es una búsqueda en Booking.com de **Mallorca** con el checkin/checkout del 3 al 4 de julio de 2027 (la noche de la boda) ya rellenados.
 - **Autobús animado más grande**, con una franja terracota en el costado rotulada "M&J" (serigrafía), a petición del usuario tras ver la primera versión.
 - **Autobús animado**: en el aviso "Autobús organizado" de "Cómo llegar", un icono de autobús recorre en bucle una línea punteada de Palma a Alaró, se gira al llegar a cada extremo y vuelve — visualiza el trayecto de ida y vuelta descrito en el texto. Respeta `prefers-reduced-motion`.
