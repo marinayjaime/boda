@@ -684,7 +684,7 @@ section { position: relative; }
 }
 .location__bus p { color: #cfc8b6; font-size: 0.92rem; line-height: 1.6; text-align: left; }
 
-.location__route { display: flex; align-items: center; gap: 0.7rem; }
+.location__route { display: flex; align-items: center; gap: 0.7rem; padding: 1.1rem 0; }
 .location__route-city {
   flex-shrink: 0;
   font-family: var(--font-body);
@@ -717,7 +717,7 @@ section { position: relative; }
   position: absolute;
   top: 50%;
   left: 2%;
-  width: 28px;
+  width: 54px;
   height: auto;
   color: var(--gold);
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
