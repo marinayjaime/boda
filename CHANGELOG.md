@@ -11,6 +11,7 @@ Descartadas (2026-08-20, decisión explícita del usuario, no reabrir sin que lo
 
 ## 2026-08-20
 
+- **"Guardar la fecha" con llamada de atención**: al cargar la web, los enlaces "Guardar en Google Calendar · Añadir a Apple Calendar" pulsan dos veces con un resplandor dorado suave (justo después del fundido de entrada del hero), para que el visitante se fije en que puede guardar la boda en su calendario. Respeta `prefers-reduced-motion`. De paso, el botón "Añadir a Apple / Outlook" se simplificó a "Añadir a Apple Calendar" (el archivo .ics generado sigue funcionando igual en Outlook, solo cambió la etiqueta visible).
 - **Código promocional del hotel S'Olivaret**: aún no está confirmado por el hotel, así que se cambió `MARINAYJAIME27` por "Próximamente" en la tarjeta de alojamiento. Actualizar cuando el hotel lo confirme.
 - **Repo renombrado a `boda`** (antes `Boda-Marina-y-Jaime`) para acortar la URL: ahora es https://marinayjaime.github.io/boda/. Actualizadas todas las referencias (meta tags OG/Twitter en `index.html`, `README.md`, remote de git local).
 - **Miniatura simplificada**: se quitó el texto/nombre superpuesto de `assets/og-image.jpg` porque WhatsApp recorta la miniatura y solo se veía un fragmento del diseño con las letras cortadas. Ahora es directamente la foto de la pareja a pantalla completa (1200×630), sin texto.
