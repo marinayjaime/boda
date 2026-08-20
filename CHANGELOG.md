@@ -12,7 +12,9 @@ Sugeridas el 2026-08-18, pendientes de que el usuario diga cuáles quiere:
 - Cerrar el formulario automáticamente pasado el 1 de mayo de 2027, con mensaje de plazo terminado.
 - Botón para compartir directamente por WhatsApp.
 - Revisión de accesibilidad (contraste, navegación por teclado en menú y FAQ).
-- Publicar la web de verdad (Netlify + dominio propio) — pendiente desde el principio, ver sección "Cómo publicarla" en `README.md`.
+## 2026-08-20
+
+- **Web publicada de verdad**: repo git creado (`Boda-Marina-y-Jaime`, antes no existía control de versiones) y desplegado en **GitHub Pages**. URL pública: https://marinayjaime.github.io/Boda-Marina-y-Jaime/ — repo en https://github.com/marinayjaime/Boda-Marina-y-Jaime. A partir de ahora, cualquier cambio se publica haciendo `git add -A && git commit -m "..." && git push` (GitHub Pages redespliega solo en 1–2 min). Instrucciones actualizadas en `README.md`.
 
 ## 2026-08-18
 

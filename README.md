@@ -57,9 +57,21 @@ python3 -m http.server 8000
 
 y visita `http://localhost:8000`.
 
-## Cómo publicarla (gratis)
+## Publicada en GitHub Pages
 
-La forma más sencilla es **Netlify Drop**: entra en [app.netlify.com/drop](https://app.netlify.com/drop) y arrastra la carpeta `WEB BODA` completa. En segundos os da una URL pública (podéis luego conectar un dominio propio, tipo marinayjaime.com). También funciona con GitHub Pages o Vercel si preferís.
+La web ya está publicada en: **https://marinayjaime.github.io/Boda-Marina-y-Jaime/**
+
+Repo: [github.com/marinayjaime/Boda-Marina-y-Jaime](https://github.com/marinayjaime/Boda-Marina-y-Jaime) (rama `main`, GitHub Pages sirviendo desde la raíz `/`).
+
+Para publicar cambios nuevos, desde la carpeta del proyecto:
+
+```bash
+git add -A
+git commit -m "Describe aquí el cambio"
+git push
+```
+
+GitHub Pages redespliega solo en 1–2 minutos tras cada `push` a `main`. Se puede conectar un dominio propio (tipo marinayjaime.com) desde **Settings > Pages > Custom domain** en el repo.
 
 ## Datos ya incluidos
 
