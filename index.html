@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,450;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 
@@ -329,14 +329,12 @@
       <h2 class="reveal">Cómo llegar</h2>
       <p class="reveal">
         La boda tiene dos escenarios: la ceremonia en Palma y la celebración en
-        pleno corazón de la Serra de Tramuntana, entre Alaró y Orient. No os
-        preocupéis por la logística — habrá autobús organizado que hace todo el
-        trayecto por vosotros.
+        pleno corazón de la Serra de Tramuntana, entre Alaró y Orient.
       </p>
     </div>
 
-    <div class="location__venue reveal">
-      <div class="location__text">
+    <div class="location__grid">
+      <div class="location__col reveal">
         <span class="location__venue-kicker">La ceremonia</span>
         <h3>Parroquia de Santa Teresa del Niño Jesús</h3>
         <address class="location__address">
@@ -352,25 +350,17 @@
           Cómo llegar en Google Maps
           <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
+        <div class="location__map">
+          <iframe
+            title="Mapa de la ceremonia: Parroquia de Santa Teresa del Niño Jesús, Palma"
+            src="https://www.google.com/maps?q=Parroquia+de+Santa+Teresa+del+Ni%C3%B1o+Jes%C3%BAs%2C+Carrer+de+Pilar+Juncosa+13%2C+Palma&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </div>
 
-      <div class="location__map">
-        <iframe
-          title="Mapa de la ceremonia: Parroquia de Santa Teresa del Niño Jesús, Palma"
-          src="https://www.google.com/maps?q=Parroquia+de+Santa+Teresa+del+Ni%C3%B1o+Jes%C3%BAs%2C+Carrer+de+Pilar+Juncosa+13%2C+Palma&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-    </div>
-
-    <div class="location__bus reveal">
-      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M18 34V10l20-5v24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="14" cy="36" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="34" cy="31" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
-      <p>Autobús organizado: Palma (iglesia) → Alaró (finca) → Palma, de vuelta al acabar la fiesta.</p>
-    </div>
-
-    <div class="location__venue location__venue--reverse reveal">
-      <div class="location__text">
+      <div class="location__col reveal">
         <span class="location__venue-kicker">La celebración</span>
         <h3>Hotel Rural S'Olivaret &amp; Spa</h3>
         <address class="location__address">
@@ -386,16 +376,20 @@
           Cómo llegar en Google Maps
           <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
+        <div class="location__map">
+          <iframe
+            title="Mapa de la celebración: Carretera Alaró-Orient, Km 3, Alaró, Mallorca"
+            src="https://www.google.com/maps?q=Carretera+Alar%C3%B3-Orient%2C+Km+3%2C+07340+Alar%C3%B3%2C+Illes+Balears&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </div>
+    </div>
 
-      <div class="location__map">
-        <iframe
-          title="Mapa de la celebración: Carretera Alaró-Orient, Km 3, Alaró, Mallorca"
-          src="https://www.google.com/maps?q=Carretera+Alar%C3%B3-Orient%2C+Km+3%2C+07340+Alar%C3%B3%2C+Illes+Balears&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
+    <div class="location__bus reveal">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M18 34V10l20-5v24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="14" cy="36" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="34" cy="31" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      <p>Autobús organizado: Palma (iglesia) → Alaró (finca) → Palma, de vuelta al acabar la fiesta.</p>
     </div>
   </section>
 
@@ -553,6 +547,6 @@
   <p class="footer__note">Con todo nuestro cariño — Marina &amp; Jaime</p>
 </footer>
 
-<script src="script.js?v=4"></script>
+<script src="script.js?v=5"></script>
 </body>
 </html>
