@@ -9,6 +9,12 @@ Historial de todo lo que se ha ido haciendo en el proyecto, sesión a sesión. L
 
 Descartadas (2026-08-20, decisión explícita del usuario, no reabrir sin que lo pida): email de confirmación automático al invitado, cierre automático del formulario tras el 1 de mayo de 2027, botón de compartir por WhatsApp.
 
+## 2026-08-20 (continuación)
+
+- **Autobús con foto real**: el usuario pasó un PNG de un autocar y se sustituyó el icono dibujado a mano por esa foto (recortada al bus y comprimida a `assets/bus-route.png`), con "M&J" superpuesto en el costado a modo de serigrafía. El texto tiene su propia animación de espejo sincronizada con el giro del bus, para que no se lea al revés en el viaje de vuelta. Se ajustó también el rango de recorrido (antes el bus se salía del recuadro por el borde con la foto, más ancha que el icono anterior) y el tamaño en móvil.
+- **Fix: la web ya no se queda en "Confirmar asistencia" al refrescar** — pasaba porque el navegador restaura la posición de scroll y/o queda `#confirmar` en la URL tras usar el menú. Ahora cada carga fuerza scroll a inicio (`history.scrollRestoration = 'manual'`) y limpia el hash de la URL.
+- **"Cómo llegar" → La celebración**: el título pasa de "Hotel Rural S'Olivaret & Spa" a **"Finca S'Olivaret"** (la sección "¿Dónde alojarse?" sigue usando el nombre completo del hotel, sin cambios ahí).
+
 ## 2026-08-20
 
 - **Recuadro del autobús mucho más grande**: el usuario pidió agrandar todo el conjunto (recuadro, texto "Palma"/"Alaró" y el propio autobús). Se rediseñó para poner las dos ciudades en una fila arriba (space-between) en vez de a los lados de la línea, así el autobús puede ser bastante más grande (110px escritorio / 88px móvil) sin arriesgar solaparse con el texto en pantallas estrechas — con el diseño anterior (ciudades a los lados) sí llegaba a solaparse en 375px. Ofrecido también animar un PNG de autobús que el usuario pueda pasar, en vez del SVG dibujado a mano, si lo prefiere más adelante.
