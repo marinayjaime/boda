@@ -6,14 +6,15 @@ Historial de todo lo que se ha ido haciendo en el proyecto, sesión a sesión. L
 
 Sugeridas el 2026-08-18, pendientes de que el usuario diga cuáles quiere:
 
-- **Vista previa al compartir el enlace** (meta tags Open Graph/Twitter Card + imagen): ahora mismo compartir el link por WhatsApp/email no muestra ninguna tarjeta con foto. Prioridad alta, fácil de hacer.
 - **Email de confirmación automático al invitado** al rellenar el RSVP (vía `MailApp` en el mismo Apps Script), además de guardarlo en la Sheet.
 - Favicon (icono de pestaña del navegador) — no tiene ninguno todavía.
 - Cerrar el formulario automáticamente pasado el 1 de mayo de 2027, con mensaje de plazo terminado.
 - Botón para compartir directamente por WhatsApp.
 - Revisión de accesibilidad (contraste, navegación por teclado en menú y FAQ).
+
 ## 2026-08-20
 
+- **Miniatura al compartir el enlace** (Open Graph/Twitter Card): diseñada una imagen a medida (`assets/og-image.jpg`, 1200×630) con la tipografía y paleta del sitio (Lora + Jost, tonos tierra/terracota/oliva) y una foto de la pareja, generada renderizando un HTML propio con Chrome headless. Añadidas las meta tags `og:*` y `twitter:*` en `index.html` apuntando a la URL pública de GitHub Pages. Ahora compartir el link por WhatsApp/email/redes muestra una tarjeta con foto en vez de nada.
 - **Web publicada de verdad**: repo git creado (`Boda-Marina-y-Jaime`, antes no existía control de versiones) y desplegado en **GitHub Pages**. URL pública: https://marinayjaime.github.io/Boda-Marina-y-Jaime/ — repo en https://github.com/marinayjaime/Boda-Marina-y-Jaime. A partir de ahora, cualquier cambio se publica haciendo `git add -A && git commit -m "..." && git push` (GitHub Pages redespliega solo en 1–2 min). Instrucciones actualizadas en `README.md`.
 
 ## 2026-08-18
