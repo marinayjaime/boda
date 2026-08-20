@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+</script>
 <title>Marina &amp; Jaime · 3 de julio de 2027</title>
 <meta name="description" content="Nos casamos el 3 de julio de 2027 en Alaró, Mallorca. Confirma tu asistencia.">
 
@@ -24,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,450;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
 
@@ -362,7 +367,7 @@
 
       <div class="location__col reveal">
         <span class="location__venue-kicker">La celebración</span>
-        <h3>Hotel Rural S'Olivaret &amp; Spa</h3>
+        <h3>Finca S'Olivaret</h3>
         <address class="location__address">
           Carretera Alaró–Orient, Km 3<br>
           07340 Alaró, Illes Balears
@@ -394,16 +399,10 @@
           <span class="location__route-city">Alaró</span>
         </div>
         <div class="location__route-track">
-          <svg class="location__route-bus" viewBox="0 0 64 32">
-            <rect x="3" y="6" width="52" height="18" rx="5" fill="var(--night)" stroke="currentColor" stroke-width="1.8"/>
-            <rect x="8" y="9" width="9" height="6" rx="1" fill="currentColor" opacity="0.55"/>
-            <rect x="21" y="9" width="9" height="6" rx="1" fill="currentColor" opacity="0.55"/>
-            <rect x="42" y="9" width="9" height="6" rx="1" fill="currentColor" opacity="0.55"/>
-            <rect x="3" y="16.5" width="52" height="6.5" fill="var(--terracotta-dark)"/>
-            <text x="29" y="21.4" text-anchor="middle" font-family="'Lora', serif" font-size="6.4" font-weight="600" letter-spacing="0.3" fill="#fff8ef">M&amp;J</text>
-            <circle cx="14" cy="25.5" r="3.6" fill="currentColor"/>
-            <circle cx="44" cy="25.5" r="3.6" fill="currentColor"/>
-          </svg>
+          <div class="location__route-bus">
+            <img src="assets/bus-route.png" alt="">
+            <span class="location__route-bus-badge">M&amp;J</span>
+          </div>
         </div>
       </div>
       <p>Autobús organizado: Palma (iglesia) → Alaró (finca) → Palma, de vuelta al acabar la fiesta.</p>

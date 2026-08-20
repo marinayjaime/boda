@@ -716,17 +716,31 @@ section { position: relative; }
   position: absolute;
   top: 50%;
   left: 2%;
-  width: 110px;
-  height: auto;
-  color: var(--gold);
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.45));
+  width: 160px;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.45));
   animation: bus-route 9s ease-in-out infinite;
 }
+.location__route-bus img { display: block; width: 100%; height: auto; }
+.location__route-bus-badge {
+  position: absolute;
+  left: 45%;
+  top: 56%;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(0.6rem, 1.6vw, 0.9rem);
+  letter-spacing: 0.02em;
+  color: var(--terracotta-dark);
+  animation: bus-badge-counter-flip 9s ease-in-out infinite;
+}
 @keyframes bus-route {
-  0%, 8%    { left: 2%;  transform: translate(-50%, -50%) scaleX(1); }
-  42%, 58%  { left: 98%; transform: translate(-50%, -50%) scaleX(1); }
-  60%       { left: 98%; transform: translate(-50%, -50%) scaleX(-1); }
-  92%, 100% { left: 2%;  transform: translate(-50%, -50%) scaleX(-1); }
+  0%, 8%    { left: 20%; transform: translate(-50%, -50%) scaleX(1); }
+  42%, 58%  { left: 80%; transform: translate(-50%, -50%) scaleX(1); }
+  60%       { left: 80%; transform: translate(-50%, -50%) scaleX(-1); }
+  92%, 100% { left: 20%; transform: translate(-50%, -50%) scaleX(-1); }
+}
+@keyframes bus-badge-counter-flip {
+  0%, 58%   { transform: translate(-50%, -50%) scaleX(1); }
+  60%, 100% { transform: translate(-50%, -50%) scaleX(-1); }
 }
 @media (prefers-reduced-motion: reduce) {
   .location__route-bus { animation: none; left: 2%; transform: translate(-50%, -50%); }
@@ -1042,7 +1056,7 @@ input:focus, select:focus, textarea:focus {
   .location__grid { grid-template-columns: 1fr; }
   .location__bus { padding: 1.8rem 1.5rem; }
   .location__route { padding: 0.6rem 0 2.2rem; gap: 1.6rem; }
-  .location__route-bus { width: 88px; }
+  .location__route-bus { width: 112px; }
   .field-row { grid-template-columns: 1fr; }
   .countdown { gap: 0.5rem; padding: 1rem; }
   .countdown__item { min-width: 38px; }
