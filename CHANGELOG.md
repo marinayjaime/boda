@@ -11,6 +11,8 @@ Descartadas (2026-08-20, decisión explícita del usuario, no reabrir sin que lo
 
 ## 2026-08-20
 
+- **Fotos del hero en móvil**: antes se encogían a 78px pegadas en las esquinas (casi invisibles); ahora se muestran a buen tamaño en una fila propia encima del nombre. Verificado sin desbordamiento horizontal en 320/375/428px.
+- **"Guardar la fecha" más grande**: el texto pasa de 0.8rem a ~0.95–1.05rem.
 - **"Guardar la fecha" con llamada de atención**: al cargar la web, los enlaces "Guardar en Google Calendar · Añadir a Apple Calendar" pulsan dos veces con un resplandor dorado suave (justo después del fundido de entrada del hero), para que el visitante se fije en que puede guardar la boda en su calendario. Respeta `prefers-reduced-motion`. De paso, el botón "Añadir a Apple / Outlook" se simplificó a "Añadir a Apple Calendar" (el archivo .ics generado sigue funcionando igual en Outlook, solo cambió la etiqueta visible).
 - **Código promocional del hotel S'Olivaret**: aún no está confirmado por el hotel, así que se cambió `MARINAYJAIME27` por "Próximamente" en la tarjeta de alojamiento. Actualizar cuando el hotel lo confirme.
 - **Repo renombrado a `boda`** (antes `Boda-Marina-y-Jaime`) para acortar la URL: ahora es https://marinayjaime.github.io/boda/. Actualizadas todas las referencias (meta tags OG/Twitter en `index.html`, `README.md`, remote de git local).
