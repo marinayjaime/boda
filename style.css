@@ -294,6 +294,26 @@ p { margin: 0; }
 .save-date__link:hover { color: var(--terracotta); }
 .save-date__sep { color: var(--ink-faint); }
 
+.save-date--attn {
+  border-radius: 999px;
+  animation: save-date-pulse 1.6s ease-in-out 2;
+}
+.save-date--attn .save-date__link { animation: save-date-text-pulse 1.6s ease-in-out 2; }
+
+@keyframes save-date-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(182, 137, 63, 0); }
+  50% { box-shadow: 0 0 22px 8px rgba(182, 137, 63, 0.32); }
+}
+@keyframes save-date-text-pulse {
+  0%, 100% { color: var(--ink-soft); text-decoration-color: rgba(110, 97, 76, 0.35); }
+  50% { color: var(--terracotta-dark); text-decoration-color: rgba(150, 70, 31, 0.55); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .save-date--attn,
+  .save-date--attn .save-date__link { animation: none; }
+}
+
 .scroll-cue {
   position: absolute;
   bottom: 2.4rem;

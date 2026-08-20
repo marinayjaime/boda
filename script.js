@@ -124,6 +124,21 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   revealEls.forEach((el) => observer.observe(el));
 
+  /* ---------- Llamada de atención sobre "Guardar la fecha" ---------- */
+  const saveDate = document.querySelector('.save-date');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (saveDate && !reducedMotion) {
+    // Espera a que termine el fundido de entrada del hero antes de pulsar
+    setTimeout(() => {
+      saveDate.classList.add('save-date--attn');
+      saveDate.addEventListener(
+        'animationend',
+        () => saveDate.classList.remove('save-date--attn'),
+        { once: true }
+      );
+    }, 1900);
+  }
+
   /* ---------- Contadores en vivo (confirmados, transporte, canciones) ---------- */
   const statConfirmados = document.getElementById('statConfirmados');
   const statTransporte = document.getElementById('statTransporte');
