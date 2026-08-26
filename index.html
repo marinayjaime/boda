@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,450;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css?v=15">
+<link rel="stylesheet" href="style.css?v=16">
 </head>
 <body>
 
@@ -169,34 +169,29 @@
 
   <!-- LA BODA -->
   <section class="story" id="la-boda">
-    <div class="story__col story__col--text">
-      <span class="section-kicker reveal">Nuestra historia</span>
-      <h2 class="reveal">Un “sí quiero”, rodeados de los nuestros</h2>
-      <p class="story__text reveal">
-        Por fin ha llegado el día que tanto hemos esperado. Queremos celebrarlo
-        rodeados de las personas que más queremos, con calma, con sol de julio y con
-        mucha, mucha alegría. Nos encantaría que formarais parte de esta jornada tan
-        especial para nosotros.
-      </p>
-    </div>
+    <h2 class="reveal">Nuestra historia</h2>
 
-    <div class="story__col story__col--photos">
-      <div class="story__frame reveal">
-        <img class="story__bg-photo is-active" src="assets/story-01.jpg" alt="Marina y Jaime">
-        <img class="story__bg-photo" src="assets/story-02.jpg" alt="">
-        <img class="story__bg-photo" src="assets/story-03.jpg" alt="">
-        <img class="story__bg-photo" src="assets/story-04.jpg" alt="">
-        <img class="story__bg-photo" src="assets/story-05.jpg" alt="">
-        <img class="story__bg-photo" src="assets/story-06.jpg" alt="">
-        <img class="story__bg-photo" src="assets/story-07.jpg" alt="">
-        <img class="story__bg-photo" src="assets/story-08.jpg" alt="">
-        <img class="story__bg-photo" src="assets/story-09.jpg" alt="">
-        <img class="story__bg-photo" src="assets/story-10.jpg" alt="">
-        <img class="story__bg-photo" src="assets/story-11.jpg" alt="">
-        <img class="story__bg-photo" src="assets/story-12.jpg" alt="">
-        <img class="story__bg-photo" src="assets/story-13.jpg" alt="">
-        <img class="story__bg-photo" src="assets/story-14.jpg" alt="">
+    <div class="story-timeline reveal">
+      <div class="story__frame">
+        <img class="story__bg-photo is-active" src="assets/story-05.jpg" alt="Marina y Jaime" data-caption="Nuestra primera foto juntos, en el mirador George Sand (Mallorca).">
+        <img class="story__bg-photo" src="assets/story-01.jpg" alt="" data-caption="Texto pendiente.">
+        <img class="story__bg-photo" src="assets/story-02.jpg" alt="" data-caption="Texto pendiente.">
+        <img class="story__bg-photo" src="assets/story-03.jpg" alt="" data-caption="Texto pendiente.">
+        <img class="story__bg-photo" src="assets/story-04.jpg" alt="" data-caption="Texto pendiente.">
+        <img class="story__bg-photo" src="assets/story-06.jpg" alt="" data-caption="Texto pendiente.">
+        <img class="story__bg-photo" src="assets/story-07.jpg" alt="" data-caption="Texto pendiente.">
+        <img class="story__bg-photo" src="assets/story-08.jpg" alt="" data-caption="Texto pendiente.">
+        <img class="story__bg-photo" src="assets/story-09.jpg" alt="" data-caption="Texto pendiente.">
+        <img class="story__bg-photo" src="assets/story-10.jpg" alt="" data-caption="Texto pendiente.">
+        <img class="story__bg-photo" src="assets/story-11.jpg" alt="" data-caption="Texto pendiente.">
+        <img class="story__bg-photo" src="assets/story-12.jpg" alt="" data-caption="Texto pendiente.">
+        <img class="story__bg-photo" src="assets/story-13.jpg" alt="" data-caption="Texto pendiente.">
+        <img class="story__bg-photo" src="assets/story-14.jpg" alt="" data-caption="Texto pendiente.">
+        <button class="story-timeline__nav story-timeline__nav--prev" type="button" aria-label="Momento anterior">‹</button>
+        <button class="story-timeline__nav story-timeline__nav--next" type="button" aria-label="Momento siguiente">›</button>
       </div>
+      <p class="story-timeline__caption" id="storyCaption"></p>
+      <div class="story-timeline__dots" id="storyDots"></div>
     </div>
   </section>
 
@@ -589,6 +584,6 @@
   <p class="footer__note">Con todo nuestro cariño — Marina &amp; Jaime</p>
 </footer>
 
-<script src="script.js?v=7"></script>
+<script src="script.js?v=8"></script>
 </body>
 </html>

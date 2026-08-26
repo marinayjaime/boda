@@ -5,8 +5,17 @@ Historial de todo lo que se ha ido haciendo en el proyecto, sesión a sesión. L
 ## Ideas propuestas, aún sin implementar
 
 - Revisión de accesibilidad (contraste, navegación por teclado en menú y FAQ).
+- **Pendiente de completar "Nuestra historia"**: falta que Jaime y Marina den el orden cronológico definitivo de las 13 fotos restantes (`story-01` a `story-04` y `story-06` a `story-14`; `story-05` ya va primera) y un comentario corto para cada una — hoy llevan el texto marcador "Texto pendiente.". Ver entrada del 2026-08-26 más abajo.
+- Otras ideas de "sorprender a los invitados" propuestas el 2026-08-26 y aún no elegidas: playlist colaborativa de Spotify, quiz/trivia sobre la pareja, easter egg en el sello de lacre, álbum de fotos colaborativo (QR), recomendaciones locales en Mallorca, itinerario del fin de semana, mensaje/animación de agradecimiento al confirmar en el RSVP.
 
 Descartadas (2026-08-20, decisión explícita del usuario, no reabrir sin que lo pida): email de confirmación automático al invitado, cierre automático del formulario tras el 1 de mayo de 2027, botón de compartir por WhatsApp.
+
+## 2026-08-26 ("Nuestra historia" como línea del tiempo)
+
+- **Sección "La boda" rediseñada**: se quitó el párrafo de bienvenida y el título "Un “sí quiero”, rodeados de los nuestros" (a petición del usuario) — ahora la sección tiene un único título, "Nuestra historia", con más peso visual (antes era solo el kicker pequeño encima del párrafo).
+- **El pase de fotos pasó de automático a un carrusel controlado**: antes las 14 fotos rotaban solas cada 2s sin texto; ahora es una línea del tiempo navegable con flechas (‹ ›) superpuestas sobre la foto y puntos indicadores debajo, con un comentario en cursiva bajo cada foto (`data-caption` en cada `<img>`, mostrado en `#storyCaption` vía `script.js`). Foto más grande que antes (480px de ancho máx. frente a 360px).
+- **Orden**: `story-05` (mirador George Sand, primera foto de la pareja juntos) va la primera — confirmado por el usuario. El resto de fotos, sin orden cronológico confirmado todavía, quedan detrás en su orden numérico original como marcador temporal.
+- Motivo: idea elegida por el usuario dentro de una ronda de brainstorming sobre "cosas para sorprender a los invitados" (ver ideas descartadas/pendientes arriba).
 
 ## 2026-08-20 (estética y ambiente)
 

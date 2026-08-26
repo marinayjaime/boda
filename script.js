@@ -35,15 +35,36 @@ document.addEventListener('DOMContentLoaded', () => {
     updateParallax();
   }
 
-  /* ---------- Fondo de fotos en "Nuestra historia" ---------- */
+  /* ---------- Línea del tiempo de "Nuestra historia" ---------- */
   const storyPhotos = document.querySelectorAll('.story__bg-photo');
-  if (storyPhotos.length > 1) {
+  const storyCaption = document.getElementById('storyCaption');
+  const storyDots = document.getElementById('storyDots');
+  if (storyPhotos.length > 1 && storyCaption && storyDots) {
     let storyIndex = 0;
-    setInterval(() => {
+
+    const dots = Array.from(storyPhotos).map((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'story-timeline__dot';
+      dot.setAttribute('aria-label', `Ir al momento ${i + 1}`);
+      dot.addEventListener('click', () => goToStory(i));
+      storyDots.appendChild(dot);
+      return dot;
+    });
+
+    function goToStory(index) {
       storyPhotos[storyIndex].classList.remove('is-active');
-      storyIndex = (storyIndex + 1) % storyPhotos.length;
+      dots[storyIndex].classList.remove('is-active');
+      storyIndex = (index + storyPhotos.length) % storyPhotos.length;
       storyPhotos[storyIndex].classList.add('is-active');
-    }, 2000);
+      dots[storyIndex].classList.add('is-active');
+      storyCaption.textContent = storyPhotos[storyIndex].dataset.caption || '';
+    }
+
+    document.querySelector('.story-timeline__nav--prev')?.addEventListener('click', () => goToStory(storyIndex - 1));
+    document.querySelector('.story-timeline__nav--next')?.addEventListener('click', () => goToStory(storyIndex + 1));
+
+    goToStory(0);
   }
 
   /* ---------- Cuenta atrás ---------- */
