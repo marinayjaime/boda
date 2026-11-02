@@ -18,8 +18,8 @@ Descartadas (2026-08-20, decisión explícita del usuario, no reabrir sin que lo
 - **Recuperado del diseño anterior** en `index.html`: script que fuerza a cargar arriba del todo, metas OG/Twitter con `og-image.jpg` (ahora en `public/assets/`) y favicon SVG del sello.
 - **Sello de lacre**: el nuevo diseño lo sustituye por "M&J" en texto en cabecera y pie; Jaime decide dejarlo así de momento. El favicon sí sigue siendo el sello.
 - **Coche 3D**: es el Ferrari 458 de los ejemplos de Three.js (licencia del modelo sin confirmar); Jaime lo acepta porque la web es personal, no comercial.
-- **RSVP en modo demo** (`src/config.js`, `RSVP_CONFIG.demo = true`): el formulario no envía nada a la Google Sheet. Hay que pasarlo a `false` antes de publicar.
-- **Pendiente para publicar**: GitHub Pages ya no puede servir la raíz del repo tal cual — hace falta compilar (`npm run build`) y desplegar `dist/client/`, idealmente con una GitHub Action.
+- **RSVP real activado** (`src/config.js`, `RSVP_CONFIG.demo = false`): mismos nombres de campo y valores que el Apps Script (`google-apps-script.gs`), comprobado; los contadores leen la hoja real.
+- **Publicación sin GitHub Actions** (decisión de Jaime, "de momento"): `npm run deploy` (`scripts/deploy-pages.sh`) compila y sube `dist/client/` a la rama `gh-pages`. GitHub Pages pasa a servir `gh-pages` en vez de la raíz de `main` (que ahora solo tiene el código fuente). Cada cambio: commit en `main` → `npm run deploy`.
 
 ## 2026-08-26 ("Nuestra historia" como línea del tiempo)
 
