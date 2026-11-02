@@ -89,6 +89,14 @@ out['places'] = {
     'puigAlaro': world(39.7300, 2.7830), 'serra': world(39.7720, 2.8000),
 }
 
+# Barrios y pueblos junto a la ruta (OSM/Nominatim, data/places.json), los más reconocibles
+KEEP = {"Son Dureta": "barrio", "Camp d'en Serralta": "barrio", "Son Fortesa": "barrio", "Marratxí": "pueblo",
+        "Sant Marçal": "pueblo", "sa Cabaneta": "pueblo", "Santa Maria del Camí": "pueblo", "Consell": "pueblo", "Alaró": "pueblo"}
+pl = json.load(open(os.path.join(DATA, 'places.json')))
+out['towns'] = [{'name': p['name'][0].upper() + p['name'][1:], 'kind': KEEP[p['name']], 'xz': world(p['lat'], p['lon'])}
+                for p in pl if p['name'] in KEEP]
+print('lugares', [t['name'] for t in out['towns']])
+
 # Foto real del autobús (la que pasó Jaime en agosto)
 out['textures']['bus'] = data_uri(Image.open(os.path.join(PUBLIC, 'assets', 'bus-route.png')), fmt='PNG')
 

@@ -1,31 +1,36 @@
 <!DOCTYPE html>
-<!-- Trayecto · Palma → Alaró — boda de Marina y Jaime.
-     Una sola toma sobre el terreno real: ortofoto PNOA (IGN) drapeada sobre el relieve real, la ruta real por
-     carretera (OSM) dibujándose detrás del autobús. La foto del autobús se pliega en el punto de luz que hace el
-     trayecto. Todo es función pura de t. ?v = versión vertical (1080×1920). ?play / ?t=6.4 -->
+<!-- Trayecto · Palma → Alaró → Palma — boda de Marina y Jaime.  v4 · cenital, ida y vuelta
+     Una sola toma desde arriba sobre el terreno real: ortofoto PNOA (IGN) sobre el relieve real, ruta real (OSM).
+     Ida de día: el autobús (foto real, PNG sin fondo) deja la estela y los pueblos aparecen letra a letra junto a ella.
+     Llegada a la finca a las 18:00: un reloj gira hasta las 03:00, la luz se vuelve dorada y de golpe es de noche.
+     Vuelta de noche: el mapa se abre, el autobús vuelve a Palma con los faros encendidos. El reloj sobrevive al corte.
+     Todo es función pura de t. ?v = versión vertical (1080×1920). ?play / ?t=6.4 / ?hud -->
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<title>Trayecto · Palma → Alaró</title>
+<title>Trayecto · Palma → Alaró → Palma</title>
 <style>
-html,body{margin:0;overflow:hidden;background:#dcd9cf}
+html,body{margin:0;overflow:hidden;background:#243d4b}
 canvas{position:absolute;left:0;top:0}
-.lay{position:absolute;left:0;top:0;pointer-events:none}
-.vig{position:absolute;left:0;right:0;bottom:0;height:52%;background:linear-gradient(to top,rgba(24,24,14,.62),rgba(24,24,14,.28) 45%,rgba(24,24,14,0));opacity:0}
-.blk{position:absolute;color:#fcfaf5;will-change:transform,opacity}
+.lay{position:absolute;left:0;top:0;pointer-events:none;overflow:hidden}
+.vig{position:absolute;left:0;right:0;bottom:0;height:55%;background:linear-gradient(to top,rgba(14,14,10,.66),rgba(14,14,10,.3) 45%,rgba(14,14,10,0));opacity:0}
+.blk{position:absolute;color:#fcfaf5}
 .eye{font:500 19px/1.2 'Jost',sans-serif;letter-spacing:.26em;text-transform:uppercase;opacity:.92}
-.ttl{font:400 70px/1.04 'Lora',serif;letter-spacing:-.02em;margin-top:16px}
+.ttl{font:400 72px/1.04 'Lora',serif;letter-spacing:-.02em;margin-top:16px}
 .sub{font:italic 400 44px/1.1 'Lora',serif;margin-top:6px;color:#efe9d8}
-.blk span{display:inline-block;will-change:transform,opacity}
-.lbl{position:absolute;color:#fcfaf5;font:italic 400 36px/1 'Lora',serif;text-shadow:0 1px 3px rgba(20,20,10,.55),0 2px 22px rgba(20,20,10,.45);white-space:nowrap;transform-origin:0 50%}
-.lbl.sm{font:500 17px/1 'Jost',sans-serif;font-style:normal;letter-spacing:.24em;text-transform:uppercase}
-.card{position:absolute;left:0;top:0;background:#fcfaf5;padding:14px 14px 12px;box-shadow:0 18px 40px rgba(30,28,16,.35);transform-origin:50% 50%}
-.card img{display:block;width:300px;height:auto;background:#efeadc}
-.card p{margin:10px 2px 0;font:italic 400 24px/1 'Lora',serif;color:#272819}
+.blk span,.end span{display:inline-block}
+.town{position:absolute;left:0;top:0;color:#fcfaf5;white-space:nowrap;text-shadow:0 1px 2px rgba(18,18,8,.75),0 2px 20px rgba(18,18,8,.6)}
+.town span{display:inline-block;white-space:pre;transform-origin:50% 100%}
+.town.pueblo{font:italic 400 58px/1 'Lora',serif;letter-spacing:-.01em}
+.town.barrio{font:500 26px/1 'Jost',sans-serif;letter-spacing:.2em;text-transform:uppercase}
+#bus{position:absolute;left:0;top:0;width:190px;height:auto;transform-origin:50% 92%;filter:drop-shadow(0 14px 10px rgba(10,10,6,.45)) drop-shadow(0 2px 2px rgba(10,10,6,.35))}
+#clock{position:absolute;left:0;top:0;transform-origin:50% 50%;text-align:center;color:#fcfaf5}
+#clock svg{display:block;margin:0 auto;filter:drop-shadow(0 18px 30px rgba(10,10,6,.45))}
+#clock .dig{font:400 64px/1 'Lora',serif;font-variant-numeric:tabular-nums;margin-top:18px;letter-spacing:.01em;text-shadow:0 2px 18px rgba(10,10,6,.6)}
 .end{position:absolute;left:0;right:0;text-align:center;color:#fcfaf5}
-.end .big{font:400 96px/1 'Lora',serif;letter-spacing:-.025em}
-.end .big em{font-style:italic}
-.end .date{font:500 21px/1 'Jost',sans-serif;letter-spacing:.3em;text-transform:uppercase;margin-top:26px;opacity:.95}
+.end .big{font:400 112px/1 'Lora',serif;letter-spacing:-.025em}
+.end .big em{font-style:italic;color:#e9dcb4}
+.end .date{font:500 21px/1 'Jost',sans-serif;letter-spacing:.3em;text-transform:uppercase;margin-top:30px;opacity:.95}
 #hud{position:absolute;right:14px;bottom:10px;font:22px monospace;color:#c00;display:none}
 </style>
 </head>
@@ -34,9 +39,19 @@ canvas{position:absolute;left:0;top:0}
 <canvas id="ov"></canvas>
 <div class="lay" id="lay">
   <div class="vig" id="vig"></div>
-  <div class="lbl" id="lSerra">Serra de Tramuntana</div>
-  <div class="lbl" id="lAlaro">Alaró</div>
-  <div class="card" id="card"><img id="busImg" alt=""><p>En autobús</p></div>
+  <div id="towns"></div>
+  <img id="bus" alt="">
+  <div id="clock">
+    <svg width="230" height="230" viewBox="-115 -115 230 230">
+      <circle r="108" fill="#fcfaf5"/>
+      <circle r="108" fill="none" stroke="#8a7c55" stroke-width="3"/>
+      <g id="ticks"></g>
+      <line id="hHand" x1="0" y1="12" x2="0" y2="-54" stroke="#272819" stroke-width="8" stroke-linecap="round"/>
+      <line id="mHand" x1="0" y1="16" x2="0" y2="-84" stroke="#272819" stroke-width="4.5" stroke-linecap="round"/>
+      <circle r="8" fill="#8a7c55"/>
+    </svg>
+    <div class="dig" id="dig">18:00</div>
+  </div>
   <div class="blk" id="bStart">
     <div class="eye"><span>La ceremonia</span></div>
     <div class="ttl"><span>Parroquia de Santa Teresa</span></div>
@@ -47,8 +62,13 @@ canvas{position:absolute;left:0;top:0}
     <div class="ttl"><span>Finca S'Olivaret</span></div>
     <div class="sub"><span>Alaró</span></div>
   </div>
+  <div class="blk" id="bBack">
+    <div class="eye"><span>En autobús</span></div>
+    <div class="ttl"><span>De vuelta a Palma</span></div>
+    <div class="sub"><span>Al acabar la fiesta</span></div>
+  </div>
   <div class="end" id="eEnd">
-    <div class="big"><span>Nos vemos en <em>Alaró.</em></span></div>
+    <div class="big"><span>Marina <em>&amp;</em> Jaime</span></div>
     <div class="date"><span>Sábado · 3 de julio de 2027</span></div>
   </div>
 </div>
@@ -61,46 +81,44 @@ canvas{position:absolute;left:0;top:0}
 const Q = new URLSearchParams(location.search);
 const V = Q.has('v');
 const W = V ? 1080 : 1920, H = V ? 1920 : 1080;
-const DUR = 21, FPS = 30;
+const DUR = 45, FPS = 30;
 const A = window.ASSETS, T3 = window.THREE;
 const { clamp, lerp, seg, ease, wordRise, liftOut, spring } = OM;
 document.body.style.width = W + 'px'; document.body.style.height = H + 'px';
 for (const id of ['gl', 'ov', 'lay']) { const e = document.getElementById(id); e.style.width = W + 'px'; e.style.height = H + 'px'; }
 const fst = document.createElement('style'); fst.textContent = A.fontCSS; document.head.appendChild(fst);
-document.getElementById('busImg').src = A.textures.bus;
+const $ = id => document.getElementById(id);
+$('bus').src = A.textures.bus;
+{ const g = $('ticks'); for (let i = 0; i < 12; i++) { const a = i * Math.PI / 6, r0 = i % 3 ? 92 : 84;
+  const l = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+  l.setAttribute('x1', Math.sin(a) * r0); l.setAttribute('y1', -Math.cos(a) * r0); l.setAttribute('x2', Math.sin(a) * 100); l.setAttribute('y2', -Math.cos(a) * 100);
+  l.setAttribute('stroke', '#8a7c55'); l.setAttribute('stroke-width', i % 3 ? 3 : 5); l.setAttribute('stroke-linecap', 'round'); g.appendChild(l); } }
+
+// ─────────────────────────── el guion ───────────────────────────
+// 0–2.9 iglesia, quieto · 2.15 aterriza el autobús · 2.9–4.7 latigazo: Palma y la bahía · ida 3.6–28.0 ·
+// 25.4–28.6 baja a la finca · 28.2 reloj 18:00 · 30.2–33.0 gira hasta las 03:00, luz dorada · 33.0 NOCHE ·
+// 33.4–35.2 se abre el mapa · vuelta 34.4–40.8 · 40.6–42.8 baja sobre Palma · 42.8–45 cierre
+const TRAVEL = [3.6, 28.0], BACK = [34.4, 40.8];
+const SPIN = [30.2, 33.0], NIGHT = 33.0;
 
 // ─────────────────────────── terreno real ───────────────────────────
-const EXAG = 1.15;                                  // relieve real, apenas realzado
 const HB = A.height, HD = Float32Array.from(HB.data);
 function heightAt(x, z) {
   const u = clamp((x - HB.bounds[0]) / (HB.bounds[2] - HB.bounds[0]), 0, 1) * (HB.w - 1);
   const v = clamp((z - HB.bounds[1]) / (HB.bounds[3] - HB.bounds[1]), 0, 1) * (HB.h - 1);
   const i = Math.min(HB.w - 2, Math.floor(u)), j = Math.min(HB.h - 2, Math.floor(v)), a = u - i, b = v - j;
   const p = (ii, jj) => HD[jj * HB.w + ii];
-  return (p(i, j) * (1 - a) * (1 - b) + p(i + 1, j) * a * (1 - b) + p(i, j + 1) * (1 - a) * b + p(i + 1, j + 1) * a * b) * EXAG;
+  return p(i, j) * (1 - a) * (1 - b) + p(i + 1, j) * a * (1 - b) + p(i, j + 1) * (1 - a) * b + p(i + 1, j + 1) * a * b;
 }
-
-const renderer = new T3.WebGLRenderer({ canvas: document.getElementById('gl'), antialias: true, preserveDrawingBuffer: true });
+const renderer = new T3.WebGLRenderer({ canvas: $('gl'), antialias: true, preserveDrawingBuffer: true });
 renderer.setPixelRatio(1); renderer.setSize(W, H, false);
 renderer.outputColorSpace = T3.SRGBColorSpace;
 const scene = new T3.Scene();
-const HAZE = new T3.Color('#dfddd3');
-const FOG = [6000, 26000];                        // calima real: lo lejano se aclara
-// cielo de verano: la calima vive en el horizonte real (no en el borde de la pantalla), y el terreno se funde en ella
-const SKY = new T3.Mesh(new T3.SphereGeometry(80000, 48, 24), new T3.ShaderMaterial({
-  side: T3.BackSide, depthWrite: false, fog: false,
-  uniforms: { haze: { value: HAZE }, zen: { value: new T3.Color('#86a9c6') }, mid: { value: new T3.Color('#b9cedc') } },
-  vertexShader: `varying vec3 vDir; void main(){ vDir = normalize(position); gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
-  fragmentShader: `uniform vec3 haze, zen, mid; varying vec3 vDir;
-    void main(){ float y = vDir.y; vec3 c = mix(haze, mid, smoothstep(0.0, 0.10, y)); c = mix(c, zen, smoothstep(0.10, 0.55, y));
-      gl_FragColor = vec4(c, 1.0);
-      #include <colorspace_fragment>
-    }`,
-}));
-SKY.renderOrder = -1; scene.add(SKY);
-const camera = new T3.PerspectiveCamera(V ? 52 : 38, W / H, 5, 90000);
+const SEA_DAY = new T3.Color('#243d4b'), SEA_NIGHT = new T3.Color('#070d16');
+scene.background = SEA_DAY.clone();
+const camera = new T3.PerspectiveCamera(V ? 50 : 36, W / H, 5, 120000);
 
-// Una sola superficie: cada punto toma la ortofoto más detallada que lo cubre (sin capas que se peleen).
+let TMAT = null;
 function terrainMesh(b, segs, layers) {
   const [x0, z0, x1, z1] = b, n = segs + 1;
   const pos = new Float32Array(n * n * 3), idx = new Uint32Array(segs * segs * 6);
@@ -115,17 +133,15 @@ function terrainMesh(b, segs, layers) {
   const geo = new T3.BufferGeometry();
   geo.setAttribute('position', new T3.BufferAttribute(pos, 3)); geo.setIndex(new T3.BufferAttribute(idx, 1));
   const N = layers.length;
-  const mat = new T3.ShaderMaterial({
+  TMAT = new T3.ShaderMaterial({
     uniforms: {
       tex: { value: layers.map(l => l.tex) }, bnd: { value: layers.map(l => new T3.Vector4(...l.bounds)) },
-      fea: { value: layers.map(l => l.feather) },
-      fogColor: { value: HAZE }, fogNear: { value: 0 }, fogFar: { value: 1 },
-      tint: { value: new T3.Color('#fff4e4') },          // ligera calidez, sigue siendo la foto
+      fea: { value: layers.map(l => l.feather) }, tint: { value: new T3.Color('#fff4e4') },
+      gold: { value: 0 }, night: { value: 0 },
     },
-    vertexShader: `varying vec3 vW; varying float vD;
-      void main(){ vec4 w = modelMatrix*vec4(position,1.0); vW = w.xyz; vec4 mv = viewMatrix*w; vD = -mv.z; gl_Position = projectionMatrix*mv; }`,
-    fragmentShader: `uniform sampler2D tex[${N}]; uniform vec4 bnd[${N}]; uniform float fea[${N}];
-      uniform vec3 fogColor; uniform float fogNear, fogFar; uniform vec3 tint; varying vec3 vW; varying float vD;
+    vertexShader: `varying vec3 vW; void main(){ vec4 w = modelMatrix*vec4(position,1.0); vW = w.xyz; gl_Position = projectionMatrix*viewMatrix*w; }`,
+    fragmentShader: `uniform sampler2D tex[${N}]; uniform vec4 bnd[${N}]; uniform float fea[${N}]; uniform vec3 tint;
+      uniform float gold, night; varying vec3 vW;
       void main(){
         vec3 col = vec3(0.86); vec2 uv, e; float d, w;
         #pragma unroll_loop_start
@@ -134,21 +150,29 @@ function terrainMesh(b, segs, layers) {
           e = min(uv, 1.0 - uv); d = min(e.x, e.y);
           w = fea[i] > 0.0 ? smoothstep(0.0, fea[i], d) : step(0.0, d);
           col = mix(col, texture2D(tex[i], clamp(uv, 0.0, 1.0)).rgb, w);
+          col = mix(col, vec3(0.018, 0.045, 0.07), (1.0 - smoothstep(0.0, 0.012, col.r + col.g + col.b)) * w);
         }
         #pragma unroll_loop_end
-        col = mix(vec3(dot(col, vec3(0.2126, 0.7152, 0.0722))), col, 1.10);   // un toque de viveza
-        col = clamp((col - 0.18) * 1.07 + 0.18, 0.0, 1.0) * tint;
-        col = mix(col, fogColor, smoothstep(fogNear, fogFar, vD));
+        float lum = dot(col, vec3(0.2126, 0.7152, 0.0722));
+        float sat = max(col.r, max(col.g, col.b)) - min(col.r, min(col.g, col.b));
+        col = mix(vec3(lum), col, 1.12);
+        col = clamp((col - 0.18) * 1.08 + 0.18, 0.0, 1.0) * tint;
+        // la tarde avanza: luz dorada, cada vez más baja
+        col = mix(col, col * vec3(1.30, 0.88, 0.52) * (1.0 - 0.45 * gold), gold);
+        // noche: la misma foto, a la luz de la luna, y las luces de lo construido (gris, poco saturado, claro)
+        vec3 moon = pow(vec3(lum), vec3(1.15)) * vec3(0.16, 0.22, 0.40) * 0.7;
+        float built = smoothstep(0.30, 0.46, lum) * (1.0 - smoothstep(0.022, 0.055, sat));
+        vec3 lights = vec3(1.0, 0.68, 0.32) * built;
+        col = mix(col, moon + lights * 0.85, night);
         gl_FragColor = vec4(col, 1.0);
         #include <colorspace_fragment>
       }`,
   });
-  return new T3.Mesh(geo, mat);
+  return new T3.Mesh(geo, TMAT);
 }
-let TERRAIN = null;
 
 // ─────────────────────────── ruta real ───────────────────────────
-const RP = A.route.map(([x, z]) => new T3.Vector3(x, heightAt(x, z) + 4, z));
+const RP = A.route.map(([x, z]) => new T3.Vector3(x, heightAt(x, z) + 3, z));
 const CUM = [0]; for (let i = 1; i < RP.length; i++) CUM.push(CUM[i - 1] + RP[i].distanceTo(RP[i - 1]));
 const LEN = CUM[CUM.length - 1];
 function routeAt(s) {
@@ -157,40 +181,58 @@ function routeAt(s) {
   const u = (s - CUM[lo]) / Math.max(1e-6, CUM[hi] - CUM[lo]);
   return RP[lo].clone().lerp(RP[hi], u);
 }
-const P = {}; for (const [k, [x, z]] of Object.entries(A.places)) P[k] = new T3.Vector3(x, heightAt(x, z), z);
-const yawOf = (dx, dz) => Math.atan2(-dx, -dz);                       // cámara mirando en esa dirección
-const BEAR = yawOf(P.finca.x - P.church.x, P.finca.z - P.church.z);    // rumbo general Palma → Alaró
-
-// ─────────────────────────── el guion ───────────────────────────
-const TRAVEL = [3.0, 15.4];                          // el autobús sale y llega
-const prog = t => ease.smoother(seg(t, TRAVEL[0], TRAVEL[1]));
-const headS = t => prog(t) * LEN;
-function routeYaw(s) {                                // rumbo suavizado: la cámara no se marea con cada curva
-  const a = routeAt(s - 2200), b = routeAt(s + 2200);
-  let y = yawOf(b.x - a.x, b.z - a.z);
-  let d = ((y - BEAR + Math.PI * 3) % (Math.PI * 2)) - Math.PI;       // mezcla con el rumbo general
-  return BEAR + d * 0.45;
+function nearestS(x, z) {
+  let best = 0, bd = Infinity;
+  for (let i = 0; i < RP.length; i++) { const d = (RP[i].x - x) ** 2 + (RP[i].z - z) ** 2; if (d < bd) { bd = d; best = CUM[i]; } }
+  return best;
 }
+const P = {}; for (const [k, [x, z]] of Object.entries(A.places)) P[k] = new T3.Vector3(x, heightAt(x, z), z);
+const yawRight = (hx, hz) => Math.atan2(-hz, hx);       // el rumbo apunta a la DERECHA de la pantalla
+const BEAR = yawRight(P.finca.x - P.church.x, P.finca.z - P.church.z);
 const angLerp = (a, b, u) => a + ((((b - a) + Math.PI * 3) % (Math.PI * 2)) - Math.PI) * u;
+const angDiff = (a, b) => ((((a - b) + Math.PI * 3) % (Math.PI * 2)) - Math.PI);
+const MID = routeAt(LEN * 0.5);
 
+const prog = t => { const u = seg(t, TRAVEL[0], TRAVEL[1]); return lerp(ease.smoother(u), ease.sineInOut(u), 0.5); };
+const goS = t => prog(t) * LEN;                            // ida
+const backS = t => LEN * (1 - ease.cubicInOut(seg(t, BACK[0], BACK[1])));   // vuelta
+const isBack = t => t >= NIGHT;
+const busS = t => isBack(t) ? backS(t) : goS(t);
+function routeHeading(s, win = 1800) { const a = routeAt(s - win), b = routeAt(s + win); return yawRight(b.x - a.x, b.z - a.z); }
+function smoothYaw(t) {
+  let sx = 0, sy = 0;
+  for (let k = -6; k <= 6; k++) { const y = routeHeading(goS(t + k * 0.25)); const w = 1 - Math.abs(k) / 7; sx += Math.cos(y) * w; sy += Math.sin(y) * w; }
+  return BEAR + angDiff(Math.atan2(sy, sx), BEAR) * 0.8;
+}
+// altura de cámara: más alta en crucero para que los nombres se lean
+const DK = [[0, 430], [2.9, 430], [4.7, 9000, ease.expoInOut], [6.8, 6800, ease.sineInOut], [15.5, 7400, ease.sineInOut],
+            [19.0, 10200, ease.cubicInOut], [23.0, 7600, ease.sineInOut], [28.6, 560, ease.cubicInOut], [33.4, 560],
+            [35.2, 21000, ease.expoInOut], [40.6, 21000], [42.8, 6200, ease.cubicInOut], [DUR, 6200]];
+function keyLog(t, K) {
+  for (let i = 1; i < K.length; i++) if (t <= K[i][0]) {
+    const [t0, v0] = K[i - 1], [t1, v1, c = ease.sineInOut] = K[i];
+    return Math.exp(lerp(Math.log(v0), Math.log(v1), c(seg(t, t0, t1))));
+  }
+  return K[K.length - 1][1];
+}
 function camPose(t) {
-  const s = headS(t), head = routeAt(s), yaw = routeYaw(s);
-  const fwd = new T3.Vector3(-Math.sin(yaw), 0, -Math.cos(yaw));
-  const S0 = { T: P.church.clone(), D: V ? 620 : 470, pitch: 89, yaw: BEAR };
-  const low = OM.sstep(0.38, 0.78, prog(t));            // al acercarse a la sierra, la cámara levanta la vista
-  const S1 = { T: head.clone().addScaledVector(fwd, lerp(900, 1400, low)), D: (V ? 5200 : 4300) * lerp(1, 0.86, low), pitch: lerp(33, 19, low), yaw };
-  const S2 = { T: P.finca.clone(), D: V ? 700 : 540, pitch: 89, yaw: BEAR };
-  const a = ease.cubicInOut(seg(t, 2.3, 5.8)), c = ease.cubicInOut(seg(t, 13.4, 17.6));
-  const mix = (X, Y, u) => ({ T: X.T.clone().lerp(Y.T, u), D: Math.exp(lerp(Math.log(X.D), Math.log(Y.D), u)),
-                               pitch: lerp(X.pitch, Y.pitch, u), yaw: angLerp(X.yaw, Y.yaw, u) });
-  const p = mix(mix(S0, S1, a), S2, c);
-  // la mano del operador: flota en el vuelo, quieta en los planos fijos
-  const f = a * (1 - c);
-  p.yaw += f * 0.012 * Math.sin(t * 0.83 + 0.4);
-  p.pitch += f * 0.6 * Math.sin(t * 1.17 + 1.3);
-  // empuje lento en los planos fijos
-  p.D *= 1 - 0.06 * ease.sineInOut(seg(t, 0, 2.6)) * (1 - a) - 0.08 * ease.sineInOut(seg(t, 17.0, DUR)) * c;
-  return p;
+  const D = keyLog(t, DK) * (V ? 1.25 : 1);
+  let T, Y;
+  if (!isBack(t)) {
+    const head = routeAt(goS(t)), yaw = smoothYaw(t);
+    const right = new T3.Vector3(Math.cos(yaw), 0, -Math.sin(yaw));
+    const follow = head.clone().addScaledVector(right, D * (V ? 0.08 : 0.16));
+    const a = ease.expoInOut(seg(t, 2.9, 4.7)), c = ease.cubicInOut(seg(t, 25.4, 28.6));
+    T = P.church.clone().lerp(follow, a).lerp(P.finca, c);
+    Y = angLerp(angLerp(BEAR, yaw, a), BEAR, c);
+    const f = a * (1 - c);
+    return { T, D, pitch: 90 - f * (5 + 2 * Math.sin(t * 0.7)), yaw: Y + f * 0.01 * Math.sin(t * 0.9 + 0.3) };
+  }
+  // vuelta: se abre hasta ver toda la ruta, sigue al autobús de lejos y baja sobre Palma
+  const r = ease.expoInOut(seg(t, 33.4, 35.2)), e = ease.cubicInOut(seg(t, 40.6, 42.8));
+  const bus = routeAt(backS(t)), wide = MID.clone().lerp(bus, 0.35);
+  T = P.finca.clone().lerp(wide, r).lerp(P.church, e);
+  return { T, D, pitch: 90, yaw: BEAR };
 }
 const EUL = new T3.Euler(0, 0, 0, 'YXZ');
 function placeCamera(cam, p) {
@@ -198,7 +240,6 @@ function placeCamera(cam, p) {
   cam.quaternion.setFromEuler(EUL);
   const dir = new T3.Vector3(0, 0, -1).applyQuaternion(cam.quaternion);
   cam.position.copy(p.T).addScaledVector(dir, -p.D);
-  cam.position.y = Math.max(cam.position.y, heightAt(cam.position.x, cam.position.z) + 180);
   cam.updateMatrixWorld(true);
 }
 function toScreen(v, cam) {
@@ -206,12 +247,11 @@ function toScreen(v, cam) {
   return { x: (p.x + 1) / 2 * W, y: (1 - p.y) / 2 * H, ok: p.z < 1 && p.z > -1 };
 }
 
-// ─────────────────────────── capa 2D: la estela ───────────────────────────
-const ov = document.getElementById('ov'); ov.width = W; ov.height = H; const g = ov.getContext('2d');
+// ─────────────────────────── capa 2D: estelas ───────────────────────────
+const ov = $('ov'); ov.width = W; ov.height = H; const g = ov.getContext('2d');
 function drawRoute(t) {
   g.clearRect(0, 0, W, H);
-  const s = headS(t), pts = RP.map(v => toScreen(v, camera));
-  const routeOn = clamp((t - 2.4) / 0.6, 0, 1);
+  const night = isBack(t), pts = RP.map(v => toScreen(v, camera));
   const path = (from, to) => {
     g.beginPath(); let pen = false;
     for (let i = 0; i < pts.length; i++) {
@@ -222,48 +262,131 @@ function drawRoute(t) {
     if (to < LEN) { const hp = toScreen(routeAt(to), camera); if (hp.ok) g.lineTo(hp.x, hp.y); }
   };
   g.lineCap = g.lineJoin = 'round';
-  // lo que queda por recorrer: apenas insinuado
-  if (routeOn > 0) {
-    path(s, LEN); g.strokeStyle = `rgba(252,250,245,${0.42 * routeOn})`; g.lineWidth = 2.4; g.setLineDash([2, 9]); g.stroke(); g.setLineDash([]);
-  }
-  // lo recorrido: la estela
-  if (s > 0) {
-    path(0, s);
-    g.strokeStyle = 'rgba(28,27,14,.38)'; g.lineWidth = 9; g.stroke();
-    g.strokeStyle = '#fcfaf5'; g.lineWidth = 4.2; g.stroke();
-  }
-  // salida y llegada
-  for (const [pt, t0] of [[P.church, 2.5], [P.finca, 2.9]]) {
-    const q = toScreen(pt.clone().setY(pt.y + 4), camera), k = spring(t - t0, 0.6, 16);
-    if (!q.ok || k <= 0) continue;
-    g.fillStyle = 'rgba(28,27,14,.3)'; g.beginPath(); g.arc(q.x, q.y, 10 * k, 0, 7); g.fill();
-    g.fillStyle = '#8a7c55'; g.strokeStyle = '#fcfaf5'; g.lineWidth = 3;
-    g.beginPath(); g.arc(q.x, q.y, 8 * k, 0, 7); g.fill(); g.stroke();
-  }
-  // el autobús: un punto de luz que avanza
-  const hk = spring(t - 2.55, 0.55, 15);
-  if (hk > 0) {
-    const q = toScreen(routeAt(s), camera);
-    if (q.ok) {
-      const arrive = spring(t - TRAVEL[1], 0.5, 12), r = 30 * hk + 8 * Math.max(0, 1 - Math.abs(arrive - 1) * 3);
-      const gr = g.createRadialGradient(q.x, q.y, 0, q.x, q.y, r);
-      gr.addColorStop(0, 'rgba(255,248,226,.85)'); gr.addColorStop(0.35, 'rgba(255,242,206,.35)'); gr.addColorStop(1, 'rgba(255,242,206,0)');
-      g.fillStyle = gr; g.beginPath(); g.arc(q.x, q.y, r, 0, 7); g.fill();
-      g.fillStyle = '#fffaf0'; g.beginPath(); g.arc(q.x, q.y, 7.5 * hk, 0, 7); g.fill();
+  const s = goS(t);
+  if (!night) {
+    const on = ease.smooth(seg(t, 3.0, 3.8)) * (1 - ease.smooth(seg(t, 27.4, 28.4)));
+    if (on > 0) { path(s, LEN); g.strokeStyle = `rgba(252,250,245,${0.5 * on})`; g.lineWidth = 3; g.setLineDash([2, 11]); g.stroke(); g.setLineDash([]); }
+    if (s > 1) {
+      path(0, s);
+      g.strokeStyle = 'rgba(22,21,10,.42)'; g.lineWidth = 13; g.stroke();
+      g.strokeStyle = 'rgba(255,246,222,.35)'; g.lineWidth = 9; g.stroke();
+      g.strokeStyle = '#fcfaf5'; g.lineWidth = 5; g.stroke();
     }
+  } else {
+    // de noche: la ida queda como un hilo tenue; la vuelta brilla, cálida
+    path(0, LEN); g.strokeStyle = 'rgba(252,250,245,.22)'; g.lineWidth = 2.5; g.stroke();
+    const b = backS(t);
+    if (b < LEN - 1) {
+      path(b, LEN);
+      g.strokeStyle = 'rgba(255,170,70,.18)'; g.lineWidth = 22; g.stroke();
+      g.strokeStyle = 'rgba(255,196,110,.45)'; g.lineWidth = 10; g.stroke();
+      g.strokeStyle = '#ffe2a8'; g.lineWidth = 4; g.stroke();
+    }
+  }
+  for (const [pt, t0] of [[P.church, 1.0], [P.finca, 3.6]]) {
+    const q = toScreen(pt, camera), k = spring(t - t0, 0.55, 15);
+    if (!q.ok || k <= 0) continue;
+    g.fillStyle = 'rgba(22,21,10,.32)'; g.beginPath(); g.arc(q.x, q.y + 2, 13 * k, 0, 7); g.fill();
+    g.fillStyle = night ? '#e9b765' : '#8a7c55'; g.strokeStyle = '#fcfaf5'; g.lineWidth = 4;
+    g.beginPath(); g.arc(q.x, q.y, 10 * k, 0, 7); g.fill(); g.stroke();
+  }
+  if (!night) for (const tw of TOWNS) {
+    const k = spring(t - tw.t, 0.55, 16) * (1 - ease.smooth(seg(t, 27.4, 28.4))); if (k <= 0) continue;
+    const q = toScreen(tw.p, camera); if (!q.ok) continue;
+    g.fillStyle = '#fcfaf5'; g.beginPath(); g.arc(q.x, q.y, (tw.kind === 'pueblo' ? 8 : 6) * k, 0, 7); g.fill();
+    g.strokeStyle = 'rgba(22,21,10,.45)'; g.lineWidth = 2; g.stroke();
+  }
+  // faros del autobús de noche
+  if (night && t < BACK[1] + 1.2) {
+    const q = toScreen(routeAt(backS(t)), camera), lit = ease.smooth(seg(t, NIGHT, NIGHT + 0.4));
+    const gr = g.createRadialGradient(q.x - 70, q.y - 26, 0, q.x - 70, q.y - 26, 120);
+    gr.addColorStop(0, `rgba(255,228,170,${0.55 * lit})`); gr.addColorStop(1, 'rgba(255,228,170,0)');
+    g.fillStyle = gr; g.beginPath(); g.arc(q.x - 70, q.y - 26, 120, 0, 7); g.fill();
   }
 }
 
-// ─────────────────────────── textos y tarjeta ───────────────────────────
-const $ = id => document.getElementById(id);
-const PAD = V ? 72 : 96;
-$('bStart').style.left = PAD + 'px'; $('bStart').style.bottom = (V ? 230 : 92) + 'px';
-$('bEnd').style.left = PAD + 'px'; $('bEnd').style.bottom = (V ? 230 : 92) + 'px';
-$('eEnd').style.top = (V ? 0.40 : 0.36) * H + 'px';
-if (V) for (const e of document.querySelectorAll('.ttl')) e.style.fontSize = '60px';
-if (V) document.querySelector('.end .big').style.fontSize = '74px';
+// ─────────────────────────── pueblos: letra a letra, y se quedan para leerlos ───────────────────────────
+let TOWNS = [];
+const HOLD = 3.0;
+function buildTowns() {
+  const box = $('towns');
+  TOWNS = A.towns.filter(tw => tw.name !== 'Sa Cabaneta').map(tw => {
+    const s = nearestS(tw.xz[0], tw.xz[1]);
+    let lo = TRAVEL[0], hi = TRAVEL[1];
+    for (let k = 0; k < 40; k++) { const m = (lo + hi) / 2; if (goS(m) < s) lo = m; else hi = m; }
+    const e = document.createElement('div'); e.className = 'town ' + tw.kind;
+    for (const ch of tw.name) { const sp = document.createElement('span'); sp.textContent = ch; e.appendChild(sp); }
+    box.appendChild(e);
+    return { ...tw, s, t: Math.max(lo, 4.6), p: routeAt(s), el: e, letters: [...e.children] };
+  }).filter(tw => tw.s > 300);
+}
+function placeTowns(t) {
+  for (const tw of TOWNS) {
+    const q = toScreen(tw.p, camera);
+    const q2 = toScreen(routeAt(tw.s + 250), camera);
+    let nx = -(q2.y - q.y), ny = q2.x - q.x; const nl = Math.hypot(nx, ny) || 1; nx /= nl; ny /= nl;
+    if (ny < 0) { nx = -nx; ny = -ny; }                // la normal hacia abajo: bajo la estela, el autobús va encima
+    const off = tw.kind === 'pueblo' ? 30 : 26;
+    const x = q.x + nx * off - tw.el.offsetWidth / 2, y = q.y + ny * off;
+    const out = ease.smooth(seg(t, tw.t + HOLD, tw.t + HOLD + 0.7));
+    const edge = clamp(Math.min(q.x + 60, W + 60 - q.x, q.y + 60, H + 60 - q.y) / 120, 0, 1);
+    tw.el.style.opacity = q.ok && !isBack(t) ? (1 - out) * edge : 0;
+    tw.el.style.transform = `translate(${x}px, ${y}px)`;
+    tw.letters.forEach((sp, i) => {
+      const L = OM.letterDrop(t, tw.t, i, { stagger: 0.045, dist: 34 });
+      sp.style.opacity = L.op;
+      sp.style.transform = `translateY(${L.y - out * 10}px) scale(${L.sx}, ${L.sy})`;
+    });
+  }
+}
 
-function lines(id, t0, tOut) {
+// ─────────────────────────── el autobús (foto real, sin fondo) ───────────────────────────
+function placeBus(t) {
+  const e = $('bus'), back = isBack(t), q = toScreen(routeAt(busS(t)), camera);
+  const land = OM.letterDrop(t, 2.15, 0, { dist: 70, squash: 0.006, max: 0.16 });
+  const D = keyLog(t, DK);
+  let size = clamp(lerp(1.15, 0.78, (Math.log(D) - Math.log(430)) / (Math.log(9000) - Math.log(430))), 0.62, 1.15);
+  if (back) size = lerp(0.95, 0.66, ease.smooth(seg(t, 33.4, 35.2))) * (1 + 0.3 * ease.smooth(seg(t, 40.6, 42.8)));
+  size *= V ? 0.95 : 1;
+  const run = back ? seg(t, BACK[0], BACK[0] + 0.4) * (1 - seg(t, BACK[1] - 0.4, BACK[1])) : seg(t, TRAVEL[0], TRAVEL[0] + 0.5) * (1 - seg(t, TRAVEL[1] - 0.4, TRAVEL[1]));
+  const bob = Math.sin(t * 9.5) * 1.6 * run;
+  const arrive = back ? spring(t - BACK[1], 0.42, 14) : spring(t - TRAVEL[1], 0.42, 14);
+  const tilt = (1 - arrive) * 2.5 * ((back ? t > BACK[1] - 0.2 : t > TRAVEL[1] - 0.2) ? 1 : 0);
+  // la foto mira a la izquierda: a la ida se espeja (va hacia la derecha); a la vuelta va hacia la izquierda, hacia Palma
+  const fx = back ? 1 : -1;
+  e.style.opacity = land.op;
+  e.style.filter = back ? 'brightness(.62) saturate(.7) drop-shadow(0 10px 10px rgba(0,0,0,.5))' : '';
+  e.style.transform = `translate(${q.x - 95}px, ${q.y - 61 + land.y + bob}px) scale(${fx * size * land.sx}, ${size * land.sy}) rotate(${fx * tilt}deg)`;
+}
+
+// ─────────────────────────── el reloj: 18:00 → 03:00 ───────────────────────────
+function placeClock(t) {
+  const e = $('clock');
+  const pin = OM.popIn(t, 28.2, { rise: 30 });
+  const u = ease.cubicInOut(seg(t, SPIN[0], SPIN[1]));         // 18:00 → 27:00 (= 03:00)
+  const trip = 29 * ease.cubicInOut(seg(t, BACK[0], BACK[1]));  // la vuelta dura lo que dura de verdad: ~29 min
+  const mins = 18 * 60 + u * 9 * 60 + trip;
+  const hh = Math.floor(mins / 60) % 24, mm = Math.floor(mins % 60);
+  $('dig').textContent = `${String(hh).padStart(2, '0')}:${String(mm).padStart(2, '0')}`;
+  $('hHand').setAttribute('transform', `rotate(${(mins / 60 % 12) * 30})`);
+  $('mHand').setAttribute('transform', `rotate(${(mins % 60) * 6})`);
+  // centrado y grande durante el giro; tras el corte a la noche se retira a la esquina y se queda
+  const cx = W * (V ? 0.5 : 0.74) - 115, cy = H * (V ? 0.24 : 0.36) - 115;
+  const corner = ease.expoInOut(seg(t, 33.6, 34.6));
+  const kx = lerp(cx, W - (V ? 250 : 290), corner), ky = lerp(cy, V ? 120 : 70, corner);
+  const sc = lerp(pin.s, 0.62, corner) * (1 + 0.04 * Math.sin(Math.PI * seg(t, SPIN[0], SPIN[1])));
+  const out = ease.smooth(seg(t, 41.2, 42.0));
+  e.style.opacity = t < 28.2 ? 0 : pin.op * (1 - out);
+  e.style.transform = `translate(${kx}px, ${ky + pin.dy}px) scale(${sc})`;
+}
+
+// ─────────────────────────── textos ───────────────────────────
+const PAD = V ? 72 : 96;
+for (const id of ['bStart', 'bEnd', 'bBack']) { $(id).style.left = PAD + 'px'; $(id).style.bottom = (V ? 230 : 92) + 'px'; }
+$('eEnd').style.top = (H * (V ? 0.42 : 0.40)) + 'px';
+if (V) for (const e of document.querySelectorAll('.ttl')) e.style.fontSize = '60px';
+if (V) document.querySelector('.end .big').style.fontSize = '84px';
+function lines(id, t0, tOut, T) {
   const spans = $(id).querySelectorAll('span'); let any = 0;
   spans.forEach((sp, i) => {
     const w = wordRise(T, t0 + i * 0.13), o = liftOut(T, tOut + i * 0.05, { dur: 0.5, dist: 28, blur: 6 });
@@ -273,80 +396,53 @@ function lines(id, t0, tOut) {
   });
   return any;
 }
-let T = 0, TA = 12;
-function tPass(pt) {                                  // cuándo pasa el autobús junto a ese lugar
-  let best = 0, bd = Infinity;
-  for (let i = 0; i < RP.length; i++) { const d = (RP[i].x - pt.x) ** 2 + (RP[i].z - pt.z) ** 2; if (d < bd) { bd = d; best = CUM[i]; } }
-  let lo = TRAVEL[0], hi = TRAVEL[1];
-  for (let k = 0; k < 40; k++) { const m = (lo + hi) / 2; if (headS(m) < best) lo = m; else hi = m; }
-  return lo;
-}
-function label(id, pt, t0, t1, dy = -18) {
-  const e = $(id), q = toScreen(pt, camera);
-  const edge = Math.min(q.x - 60, W - 420 - q.x, q.y - 80, H - 120 - q.y);   // solo dentro de cuadro
-  const k = wordRise(T, t0).op * (1 - ease.smooth(seg(T, t1 - 0.6, t1))) * clamp(edge / 160, 0, 1);
-  e.style.opacity = q.ok ? k : 0;
-  e.style.transform = `translate(${q.x + 16}px, ${q.y + dy - 18}px) translateY(${(1 - k) * 10}px)`;
-}
-
-function cardAt(t) {                                   // la foto real del autobús se pliega en el punto de luz
-  const e = $('card'), q = toScreen(P.church, camera);
-  const pi = OM.popIn(t, 0.85), fold = ease.expoInOut(seg(t, 2.05, 2.75));
-  const cw = 328, ch = 0.62 * 300 + 60, ox = V ? -cw / 2 : 70, oy = V ? -ch - 120 : -ch / 2 - 40;
-  const x = lerp(q.x + ox, q.x - cw / 2, fold), y = lerp(q.y + oy + pi.dy, q.y - ch / 2, fold);
-  const sc = pi.s * lerp(1, 0.035, fold), rot = lerp(-3.5, 0, fold);
-  e.style.opacity = t < 0.85 ? 0 : pi.op * (1 - ease.smooth(seg(t, 2.5, 2.78)));
-  e.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg) scale(${sc})`;
-}
 
 function seek(t) {
-  T = t;
+  const gold = ease.sineInOut(seg(t, SPIN[0], SPIN[1])) * (t < NIGHT ? 1 : 0);
+  if (TMAT) { TMAT.uniforms.gold.value = gold; TMAT.uniforms.night.value = t >= NIGHT ? 1 : 0; }
+  scene.background.copy(t >= NIGHT ? SEA_NIGHT : SEA_DAY);
   placeCamera(camera, camPose(t));
-  SKY.position.copy(camera.position);
   renderer.render(scene, camera);
   drawRoute(t);
-  const a = lines('bStart', 0.35, 3.3);
-  const b = lines('bEnd', 16.3, 18.2);
-  const c = lines('eEnd', 18.55, 99);
-  $('vig').style.opacity = Math.max(a, b, c * 0.9);
-  label('lSerra', P.serra, 9.4, 13.9);
-  label('lAlaro', P.alaro, TA - 3.2, TA + 0.8);
-  cardAt(t);
+  placeTowns(t);
+  placeBus(t);
+  placeClock(t);
+  const a = lines('bStart', 0.35, 3.2, t);
+  const b = lines('bEnd', 28.5, 30.0, t);
+  const c = lines('bBack', 33.5, 40.0, t);
+  const d = lines('eEnd', 42.4, 99, t);
+  $('vig').style.opacity = Math.max(a, b, c, d * 0.9);
   if (Q.has('hud')) { $('hud').style.display = 'block'; $('hud').textContent = t.toFixed(2); }
   return true;
 }
 
-// ─────────────────────────── carga ───────────────────────────
 async function build() {
   const loader = new T3.TextureLoader(), maxAniso = renderer.capabilities.getMaxAnisotropy();
   const layers = [];
-  for (const L of [...A.layers].sort((a, b) => a.order - b.order)) {   // de la más amplia a la más detallada
+  for (const L of [...A.layers].sort((a, b) => a.order - b.order)) {
     const tex = await loader.loadAsync(A.textures[L.tex]);
     tex.colorSpace = T3.SRGBColorSpace; tex.anisotropy = maxAniso;
     layers.push({ tex, bounds: L.bounds, feather: L.feather });
   }
-  TERRAIN = terrainMesh(A.layers.find(l => l.order === 0).bounds, 760, layers);
-  TERRAIN.material.uniforms.fogNear.value = FOG[0]; TERRAIN.material.uniforms.fogFar.value = FOG[1];
-  scene.add(TERRAIN);
-  TA = tPass(P.alaro);
+  scene.add(terrainMesh(A.layers.find(l => l.order === 0).bounds, 760, layers));
   await document.fonts.ready;
-  await $('busImg').decode();
+  await $('bus').decode();
+  buildTowns();
   renderer.compile(scene, camera);
   seek(0);
 }
 
-window.__meta = { dur: DUR, fps: FPS };
+window.__meta = { dur: DUR, fps: FPS, cuts: [NIGHT] };
 window.__seek = async t => seek(t);
 window.__ready = build();
-window.__motion = (t0, t1) => {                       // recorrido en pantalla entre t0 y t1 (cámara + punto)
+window.__motion = (t0, t1) => {
+  if (t0 < NIGHT && t1 >= NIGHT) return 0;            // el corte a la noche es seco: sin desenfoque entre los dos
   const c0 = new T3.PerspectiveCamera().copy(camera), c1 = new T3.PerspectiveCamera().copy(camera);
-  placeCamera(c0, camPose(t0)); placeCamera(c1, camPose(t1));
-  const p0 = camPose(t0), probes = [routeAt(headS(t0)), p0.T];
-  for (const [dx, dz] of [[-800, -800], [800, -800], [-800, 800], [800, 800]]) probes.push(p0.T.clone().add(new T3.Vector3(dx * p0.D / 2000, 0, dz * p0.D / 2000)));
+  const p0 = camPose(t0); placeCamera(c0, p0); placeCamera(c1, camPose(t1));
+  const probes = [routeAt(busS(t0))];
+  for (const [dx, dz] of [[-1, -1], [1, -1], [-1, 1], [1, 1], [0, 0]]) probes.push(p0.T.clone().add(new T3.Vector3(dx * p0.D * 0.5, 0, dz * p0.D * 0.3)));
   let m = 0;
   for (const v of probes) { const a = toScreen(v, c0), b = toScreen(v, c1); if (a.ok && b.ok) m = Math.max(m, Math.hypot(a.x - b.x, a.y - b.y)); }
-  const h0 = toScreen(routeAt(headS(t0)), c0), h1 = toScreen(routeAt(headS(t1)), c1);
-  if (h0.ok && h1.ok) m = Math.max(m, Math.hypot(h0.x - h1.x, h0.y - h1.y));
   return m;
 };
 if (Q.has('play')) window.__ready.then(() => { const t0 = performance.now(); const loop = () => { seek(((performance.now() - t0) / 1000) % DUR); requestAnimationFrame(loop); }; loop(); });
