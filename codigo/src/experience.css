@@ -18,3 +18,12 @@
 
 /* Lora es más ancha que Cormorant: evita que el tiempo se salga en móvil */
 @media(max-width:560px){.weather-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.weather-grid p{font-size:23px}}
+
+/* Vídeo del trayecto (sustituye a la escena de la carretera y el coche) */
+.route-video-wrap{padding-top:0;padding-bottom:0}
+.route-video{position:relative;background:#243d4b;overflow:hidden;line-height:0}
+.route-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#243d4b}
+.route-video.is-tall video{aspect-ratio:9/16;max-height:calc(100svh - 88px);margin:0 auto}
+.route-video-button{position:absolute;right:18px;bottom:18px;display:inline-flex;align-items:center;gap:10px;min-width:48px;min-height:48px;padding:0 15px;justify-content:center;border:0;border-radius:40px;background:rgba(252,250,245,.92);color:#272819;font-size:13px;line-height:1;box-shadow:0 6px 20px rgba(20,20,10,.25);backdrop-filter:blur(8px);transition:background .2s}
+.route-video-button:hover{background:#fcfaf5}
+@media(max-width:560px){.route-video-wrap{padding-inline:0}.route-video-button{right:14px;bottom:14px}}

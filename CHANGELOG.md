@@ -10,6 +10,15 @@ Historial de todo lo que se ha ido haciendo en el proyecto, sesión a sesión. L
 
 Descartadas (2026-08-20, decisión explícita del usuario, no reabrir sin que lo pida): email de confirmación automático al invitado, cierre automático del formulario tras el 1 de mayo de 2027, botón de compartir por WhatsApp.
 
+## 2026-11-02 (vídeo del trayecto en "Cómo llegar")
+
+- **Fuera la escena de la carretera generada por IA y el Ferrari 3D** ("falsísimo", según Jaime). En su lugar, un **vídeo de 45 s del trayecto real** hecho con onetake (la misma herramienta que el vídeo de Turbi): cámara cenital sobre **fotografía aérea real del IGN (PNOA)** y el relieve real, con la **ruta real por carretera (OpenStreetMap)** de la iglesia de Santa Teresa a la Finca S'Olivaret.
+- Lo que se ve: la iglesia con su rótulo, el autobús (la foto real de `bus-route.png`, sin fondo) cae en la iglesia, latigazo de cámara que enseña Palma y la bahía, el autobús deja la estela y los barrios/pueblos por los que pasa aparecen letra a letra y se quedan ~3 s para leerlos (Son Dureta, Camp d'en Serralta, Son Fortesa, Marratxí, Sant Marçal, Santa Maria del Camí, Consell, Alaró). Llegada a la finca: reloj a las **18:00** que gira hasta las **03:00** con la luz cada vez más dorada, corte seco a **mapa nocturno**, y el autobús vuelve a Palma con los faros encendidos (el reloj llega a 03:29, lo que dura el trayecto real). Cierre: "Marina & Jaime · Sábado 3 de julio de 2027" sobre Palma de noche.
+- Horas 18:00 y 03:00: las dio Jaime; la web aún no las menciona en ningún otro sitio.
+- En la web (`src/BusJourney.jsx`): versión horizontal (1280×720, 7 MB) o vertical en móvil (720×1280, 6,8 MB), sin sonido, empieza sola al verse, se reproduce una vez, botón de pausa / volver a ver; con animaciones desactivadas no arranca solo. Créditos de IGN, Terrain Tiles y OpenStreetMap bajo el vídeo.
+- Eliminados Three.js, el modelo del Ferrari, las escenas generadas y código 3D sin usar: el JS de la web pasa de >1,2 MB a 388 kB.
+- Fuente del vídeo en `codigo/video-trayecto/` (datos pesados fuera de git; ver diseño en `codigo/docs/superpowers/specs/2026-11-02-trayecto-video-design.md`). Se renderiza con `tools/render_gpu.py` (GPU, ~8× más rápido).
+
 ## 2026-11-02 (rediseño "Atlas de luz" — rama `rediseno-atlas-luz`, sin publicar)
 
 - **Nuevo diseño completo** aportado por Jaime (carpeta `boda-atlas-luz`, hecha con otra herramienta). La web pasa de HTML/CSS/JS estático a **React + Vite** (GSAP para animaciones, Three.js para el coche 3D). El código vive en `src/`, las imágenes en `public/assets/`; `npm run build` genera la web final en `dist/client/`. Se borraron `index.html`/`style.css`/`script.js`/`assets/` antiguos (las 26 imágenes originales están intactas en `public/assets/`, verificado con `npm run check:content`).

@@ -14,7 +14,7 @@ if (!existsSync(join(dist, 'index.html'))) {
 }
 
 // Solo se tocan estos nombres en la raíz; CHANGELOG, README, codigo/, etc. no se tocan.
-const generados = ['index.html', 'assets', 'fonts', 'fonts.css', 'models', 'scenes', 'boda-marina-jaime.ics'];
+const generados = ['index.html', 'assets', 'fonts', 'fonts.css', 'video', 'models', 'scenes', 'boda-marina-jaime.ics'];
 const omitir = new Set(['qa-responsive.html']);
 
 for (const nombre of generados) rmSync(join(raiz, nombre), { recursive: true, force: true });
