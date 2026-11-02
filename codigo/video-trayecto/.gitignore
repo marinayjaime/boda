@@ -1,0 +1,11 @@
+data/
+ana/
+*.mp4
+stills*/
+render*/
+assets.js
+three.iife.js
+motion.js
+_frames/
+*.render.json
+stills*.png
