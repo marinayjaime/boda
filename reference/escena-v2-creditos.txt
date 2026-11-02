@@ -1,0 +1,5 @@
+ESCENA ILUSTRATIVA V2
+
+Carretera y coche fotográfico: generados para este proyecto con la herramienta integrada de generación de imágenes. No son fotografías del trayecto exacto ni del vehículo contratado. Prompts: carretera mediterránea vacía entre pinos y encinas, luz cálida, asfalto realista, montañas; coche descapotable marfil fotorealista visto desde atrás, fondo transparente.
+
+Vehículo WebGL: Ferrari 458 Italia por vicent091036, distribuido en el ejemplo oficial de Three.js. Fuente del modelo: https://github.com/mrdoob/three.js/tree/dev/examples/models/gltf ; atribución original: https://sketchfab.com/models/57bf6cc56931426e87494f554df1dab6 . La ficha original no está disponible al revisar. No se atribuye al modelo una licencia distinta por estar en un ejemplo de Three.js; confirmar los derechos del recurso antes de una publicación pública. El entorno no es una reconstrucción 3D completa del bosque: utiliza fotografía generada y movimiento de cámara con el coche volumétrico superpuesto. Sin WebGL, el vehículo es un recorte fotográfico animado.

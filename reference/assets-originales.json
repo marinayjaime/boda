@@ -1,0 +1,158 @@
+[
+  {
+    "file": "assets/bus-route.png",
+    "bytes": 151791,
+    "sha256": "f9860901d730e6a8fe2cab893481e01779510721da4ec863ddc84ed060d62d48",
+    "source": "https://marinayjaime.github.io/boda/assets/bus-route.png"
+  },
+  {
+    "file": "assets/combined-medallion.jpg",
+    "bytes": 128239,
+    "sha256": "1f6db6cecce50b85ab88d313f787abdbf3c930dbb407ed335494cbce02fa8c53",
+    "source": "https://marinayjaime.github.io/boda/assets/combined-medallion.jpg"
+  },
+  {
+    "file": "assets/favicon-180.png",
+    "bytes": 18915,
+    "sha256": "d796ea01b82b47ea53cf804fcdd46bef64d3c26da2d225f93e322e36480785d8",
+    "source": "https://marinayjaime.github.io/boda/assets/favicon-180.png"
+  },
+  {
+    "file": "assets/favicon-32.png",
+    "bytes": 1872,
+    "sha256": "bbcc58df7b0f8e99b11a0a7e3df46feda2a7eff9a5e3f2ce2001631c459ccc1d",
+    "source": "https://marinayjaime.github.io/boda/assets/favicon-32.png"
+  },
+  {
+    "file": "assets/favicon.svg",
+    "bytes": 1189,
+    "sha256": "7de6405f7d8d0d298519e8d30bb3c16031926e7d7ec7dc2df62e1e998ef06383",
+    "source": "https://marinayjaime.github.io/boda/assets/favicon.svg"
+  },
+  {
+    "file": "assets/footer-pareja.jpg",
+    "bytes": 386282,
+    "sha256": "04333ca2c21511beed1103eed68367c1efd10ce6bb8a85b3c7ff3a3f6605a3d6",
+    "source": "https://marinayjaime.github.io/boda/assets/footer-pareja.jpg"
+  },
+  {
+    "file": "assets/hero-derecha.jpg",
+    "bytes": 135599,
+    "sha256": "cf526eb0dd43934340a9424e8aa2e224b103c7df4e5f7ce4ad58c5e01d30863f",
+    "source": "https://marinayjaime.github.io/boda/assets/hero-derecha.jpg"
+  },
+  {
+    "file": "assets/hero-izquierda.jpg",
+    "bytes": 271236,
+    "sha256": "1e27b9b994543af26ae2ebe771b5b69cae7654cd7191825841de78d84f4b76c4",
+    "source": "https://marinayjaime.github.io/boda/assets/hero-izquierda.jpg"
+  },
+  {
+    "file": "assets/stay-canbeia.jpg",
+    "bytes": 63104,
+    "sha256": "59015e7a00ea3edcf2cbeeeda6d4cf0464fe9b6224bf99f8bbb92526fe53d998",
+    "source": "https://marinayjaime.github.io/boda/assets/stay-canbeia.jpg"
+  },
+  {
+    "file": "assets/stay-canxim.jpg",
+    "bytes": 41563,
+    "sha256": "cec8d110ff864c61d6a255cca53fa2500f64ae6dc408e6a2e1502b704b027702",
+    "source": "https://marinayjaime.github.io/boda/assets/stay-canxim.jpg"
+  },
+  {
+    "file": "assets/stay-elnido.jpg",
+    "bytes": 42140,
+    "sha256": "8545a339878a0f1b28fd985ddaa45739399d8c8723795e072d5f407557e4e812",
+    "source": "https://marinayjaime.github.io/boda/assets/stay-elnido.jpg"
+  },
+  {
+    "file": "assets/stay-solivaret.jpg",
+    "bytes": 86925,
+    "sha256": "77e6e6c54f3097bb47994e7c9361f72e1b20826205b330bd49ab815459dfb95d",
+    "source": "https://marinayjaime.github.io/boda/assets/stay-solivaret.jpg"
+  },
+  {
+    "file": "assets/story-01.jpg",
+    "bytes": 268903,
+    "sha256": "a72795cd8ea1fb3cd9b015a23ce54d43b2ddefdab0203e38c88a94593655e801",
+    "source": "https://marinayjaime.github.io/boda/assets/story-01.jpg"
+  },
+  {
+    "file": "assets/story-02.jpg",
+    "bytes": 186434,
+    "sha256": "778ab0c55a148b7848ade8d76d3831bbfd288b7ab00a1babfc594359f49adf46",
+    "source": "https://marinayjaime.github.io/boda/assets/story-02.jpg"
+  },
+  {
+    "file": "assets/story-03.jpg",
+    "bytes": 274904,
+    "sha256": "bc87f82c7ab16e204d7c863ded215538997ebeddc40bbfe154c0daceec313d7b",
+    "source": "https://marinayjaime.github.io/boda/assets/story-03.jpg"
+  },
+  {
+    "file": "assets/story-04.jpg",
+    "bytes": 236241,
+    "sha256": "cea2d11aab90587c1305c1c3d5e43a3f25d0de824c1c37ba84df8961ca0ae728",
+    "source": "https://marinayjaime.github.io/boda/assets/story-04.jpg"
+  },
+  {
+    "file": "assets/story-05.jpg",
+    "bytes": 162397,
+    "sha256": "1974a937229d269531bc8c25da25018dd58405cf3229327c6a5d3c729779148c",
+    "source": "https://marinayjaime.github.io/boda/assets/story-05.jpg"
+  },
+  {
+    "file": "assets/story-06.jpg",
+    "bytes": 218629,
+    "sha256": "ec10ef462d6061ca279bf5b6631473864e828fe03504daeed3dfa74bf99f61ae",
+    "source": "https://marinayjaime.github.io/boda/assets/story-06.jpg"
+  },
+  {
+    "file": "assets/story-07.jpg",
+    "bytes": 134535,
+    "sha256": "239f3999e8610ff8329d8e22a9f00f2dc535eebc74f2b0ad86011dead1cee15c",
+    "source": "https://marinayjaime.github.io/boda/assets/story-07.jpg"
+  },
+  {
+    "file": "assets/story-08.jpg",
+    "bytes": 144672,
+    "sha256": "78f29c77a54dd2a8e94a823ea18fd590732c5268cf8f632babe793a8ea2f063a",
+    "source": "https://marinayjaime.github.io/boda/assets/story-08.jpg"
+  },
+  {
+    "file": "assets/story-09.jpg",
+    "bytes": 229414,
+    "sha256": "58a2d12af34159756ef43acbf1d2b97927926daae4d005c563b4609d86a48fec",
+    "source": "https://marinayjaime.github.io/boda/assets/story-09.jpg"
+  },
+  {
+    "file": "assets/story-10.jpg",
+    "bytes": 221403,
+    "sha256": "fdccaf095cd03de067f9b70dd59d780d4d1d0f03bd9e20263b3a93a70402fc0a",
+    "source": "https://marinayjaime.github.io/boda/assets/story-10.jpg"
+  },
+  {
+    "file": "assets/story-11.jpg",
+    "bytes": 342066,
+    "sha256": "6a004a7aca0e026c38a361ab4c2a0af92c33246aa3ca053390cf08f3bdd6073c",
+    "source": "https://marinayjaime.github.io/boda/assets/story-11.jpg"
+  },
+  {
+    "file": "assets/story-12.jpg",
+    "bytes": 165755,
+    "sha256": "e9cf5fc2d5b9bd19766cbbb735a447066c3a84c54bb923e04f88310e34968e29",
+    "source": "https://marinayjaime.github.io/boda/assets/story-12.jpg"
+  },
+  {
+    "file": "assets/story-13.jpg",
+    "bytes": 143916,
+    "sha256": "52c218837318faa2e40a426e4c85a2356d4d98b6e600d53132fc89061c255541",
+    "source": "https://marinayjaime.github.io/boda/assets/story-13.jpg"
+  },
+  {
+    "file": "assets/story-14.jpg",
+    "bytes": 118592,
+    "sha256": "135b72cd7eb974087e4fd13b022bb123b2b74a2b26d7dcb5685b15edd287cb33",
+    "source": "https://marinayjaime.github.io/boda/assets/story-14.jpg"
+  }
+]

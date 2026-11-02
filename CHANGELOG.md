@@ -10,6 +10,17 @@ Historial de todo lo que se ha ido haciendo en el proyecto, sesión a sesión. L
 
 Descartadas (2026-08-20, decisión explícita del usuario, no reabrir sin que lo pida): email de confirmación automático al invitado, cierre automático del formulario tras el 1 de mayo de 2027, botón de compartir por WhatsApp.
 
+## 2026-11-02 (rediseño "Atlas de luz" — rama `rediseno-atlas-luz`, sin publicar)
+
+- **Nuevo diseño completo** aportado por Jaime (carpeta `boda-atlas-luz`, hecha con otra herramienta). La web pasa de HTML/CSS/JS estático a **React + Vite** (GSAP para animaciones, Three.js para el coche 3D). El código vive en `src/`, las imágenes en `public/assets/`; `npm run build` genera la web final en `dist/client/`. Se borraron `index.html`/`style.css`/`script.js`/`assets/` antiguos (las 26 imágenes originales están intactas en `public/assets/`, verificado con `npm run check:content`).
+- Novedades visuales: portada con la foto en arco que se abre al hacer scroll, galería de recuerdos arrastrable, selector ceremonia/celebración, explorador de alojamientos, y escena de carretera de montaña con un coche que avanza con el scroll (escena ilustrativa; la info real del autobús Palma→Alaró→Palma se mantiene debajo).
+- **Tipografía: Cormorant Garamond → Lora** (fuentes variables locales en `public/fonts/`). Mismo motivo de siempre: la "J" de Cormorant baja por debajo de la línea; la de Lora no. Con Lora (más ancha) el bloque de "Tiempo previsto" se salía de pantalla en móviles de ≤390px — corregido en `src/experience.css`.
+- **Recuperado del diseño anterior** en `index.html`: script que fuerza a cargar arriba del todo, metas OG/Twitter con `og-image.jpg` (ahora en `public/assets/`) y favicon SVG del sello.
+- **Sello de lacre**: el nuevo diseño lo sustituye por "M&J" en texto en cabecera y pie; Jaime decide dejarlo así de momento. El favicon sí sigue siendo el sello.
+- **Coche 3D**: es el Ferrari 458 de los ejemplos de Three.js (licencia del modelo sin confirmar); Jaime lo acepta porque la web es personal, no comercial.
+- **RSVP en modo demo** (`src/config.js`, `RSVP_CONFIG.demo = true`): el formulario no envía nada a la Google Sheet. Hay que pasarlo a `false` antes de publicar.
+- **Pendiente para publicar**: GitHub Pages ya no puede servir la raíz del repo tal cual — hace falta compilar (`npm run build`) y desplegar `dist/client/`, idealmente con una GitHub Action.
+
 ## 2026-08-26 ("Nuestra historia" como línea del tiempo)
 
 - **Sección "La boda" rediseñada**: se quitó el párrafo de bienvenida y el título "Un “sí quiero”, rodeados de los nuestros" (a petición del usuario) — ahora la sección tiene un único título, "Nuestra historia", con más peso visual (antes era solo el kicker pequeño encima del párrafo).

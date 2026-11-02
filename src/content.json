@@ -1,0 +1,268 @@
+{
+  "source": "https://marinayjaime.github.io/boda/",
+  "nav": [
+    {
+      "label": "La boda",
+      "href": "#la-boda"
+    },
+    {
+      "label": "Detalles",
+      "href": "#detalles"
+    },
+    {
+      "label": "Tiempo",
+      "href": "#tiempo"
+    },
+    {
+      "label": "Alojamiento",
+      "href": "#alojamiento"
+    },
+    {
+      "label": "Cómo llegar",
+      "href": "#como-llegar"
+    },
+    {
+      "label": "FAQ",
+      "href": "#faq"
+    },
+    {
+      "label": "Confirmar asistencia",
+      "href": "#confirmar"
+    }
+  ],
+  "stories": [
+    {
+      "src": "assets/story-05.jpg",
+      "caption": "Nuestra primera foto juntos, en el mirador George Sand (Mallorca).",
+      "alt": "Marina y Jaime"
+    },
+    {
+      "src": "assets/story-01.jpg",
+      "caption": "Texto pendiente.",
+      "alt": "Marina y Jaime"
+    },
+    {
+      "src": "assets/story-02.jpg",
+      "caption": "Texto pendiente.",
+      "alt": "Marina y Jaime"
+    },
+    {
+      "src": "assets/story-03.jpg",
+      "caption": "Texto pendiente.",
+      "alt": "Marina y Jaime"
+    },
+    {
+      "src": "assets/story-04.jpg",
+      "caption": "Texto pendiente.",
+      "alt": "Marina y Jaime"
+    },
+    {
+      "src": "assets/story-06.jpg",
+      "caption": "Texto pendiente.",
+      "alt": "Marina y Jaime"
+    },
+    {
+      "src": "assets/story-07.jpg",
+      "caption": "Texto pendiente.",
+      "alt": "Marina y Jaime"
+    },
+    {
+      "src": "assets/story-08.jpg",
+      "caption": "Texto pendiente.",
+      "alt": "Marina y Jaime"
+    },
+    {
+      "src": "assets/story-09.jpg",
+      "caption": "Texto pendiente.",
+      "alt": "Marina y Jaime"
+    },
+    {
+      "src": "assets/story-10.jpg",
+      "caption": "Texto pendiente.",
+      "alt": "Marina y Jaime"
+    },
+    {
+      "src": "assets/story-11.jpg",
+      "caption": "Texto pendiente.",
+      "alt": "Marina y Jaime"
+    },
+    {
+      "src": "assets/story-12.jpg",
+      "caption": "Texto pendiente.",
+      "alt": "Marina y Jaime"
+    },
+    {
+      "src": "assets/story-13.jpg",
+      "caption": "Texto pendiente.",
+      "alt": "Marina y Jaime"
+    },
+    {
+      "src": "assets/story-14.jpg",
+      "caption": "Texto pendiente.",
+      "alt": "Marina y Jaime"
+    }
+  ],
+  "details": [
+    {
+      "title": "Fecha",
+      "text": "Sábado, 3 de julio de 2027"
+    },
+    {
+      "title": "Hora",
+      "text": "17:00h — ceremonia"
+    },
+    {
+      "title": "Lugar",
+      "text": "Ceremonia en Palma, celebración en Alaró ver detalle en \"Cómo llegar\""
+    },
+    {
+      "title": "Vestimenta",
+      "text": "Elegante de verano tonos tierra y frescos bienvenidos"
+    }
+  ],
+  "weather": [
+    {
+      "title": "Máxima media",
+      "text": "29–31°C"
+    },
+    {
+      "title": "Mínima media",
+      "text": "18–19°C"
+    },
+    {
+      "title": "Probabilidad de lluvia",
+      "text": "~4% prácticamente nula"
+    },
+    {
+      "title": "Sol",
+      "text": "~11h al día cielos despejados"
+    }
+  ],
+  "stays": [
+    {
+      "name": "Hotel Rural S'Olivaret & Spa",
+      "image": {
+        "class": "stay-card__photo",
+        "src": "assets/stay-solivaret.jpg",
+        "alt": "Piscina del Hotel Rural S'Olivaret & Spa",
+        "width": "700",
+        "height": "466",
+        "loading": "lazy"
+      },
+      "paragraphs": [
+        "Antigua prensa de aceite reconvertida, con piscina infinita, jacuzzi y vistas a la sierra — ¡el sitio donde nos casamos! Os encantará quedaros a dormir allí mismo.",
+        "Código promocional para los asistentes de la boda: Próximamente"
+      ],
+      "link": "https://www.google.com/maps/search/?api=1&query=Hotel+Rural+S%27Olivaret+%26+Spa+Alar%C3%B3+Mallorca",
+      "badge": "Es la propia finca de la boda"
+    },
+    {
+      "name": "Casa Rural Ca'n Beia",
+      "image": {
+        "class": "stay-card__photo",
+        "src": "assets/stay-canbeia.jpg",
+        "alt": "Piscina de Casa Rural Ca'n Beia",
+        "width": "700",
+        "height": "365",
+        "loading": "lazy"
+      },
+      "paragraphs": [
+        "Molino de aceite del s. XIX en el propio pueblo de Alaró, con sauna y piscina de temporada."
+      ],
+      "link": "https://www.google.com/maps/search/?api=1&query=Casa+Rural+Ca%27n+Beia+Alar%C3%B3+Mallorca",
+      "badge": null
+    },
+    {
+      "name": "Can Xim · Turismo de Interior",
+      "image": {
+        "class": "stay-card__photo",
+        "src": "assets/stay-canxim.jpg",
+        "alt": "Habitación de Can Xim · Turismo de Interior",
+        "width": "700",
+        "height": "365",
+        "loading": "lazy"
+      },
+      "paragraphs": [
+        "En pleno pueblo de Alaró, con piscina y restaurante à la carte."
+      ],
+      "link": "https://www.google.com/maps/search/?api=1&query=Can+Xim+Turismo+de+Interior+Alar%C3%B3+Mallorca",
+      "badge": null
+    },
+    {
+      "name": "El Nido de Alaró",
+      "image": {
+        "class": "stay-card__photo",
+        "src": "assets/stay-elnido.jpg",
+        "alt": "Habitación de El Nido de Alaró",
+        "width": "700",
+        "height": "365",
+        "loading": "lazy"
+      },
+      "paragraphs": [
+        "Turismo de interior con piscina al aire libre, jardín y terraza, en el pueblo."
+      ],
+      "link": "https://www.google.com/maps/search/?api=1&query=El+Nido+de+Alar%C3%B3+Turismo+de+Interior+Mallorca",
+      "badge": null
+    }
+  ],
+  "faq": [
+    {
+      "question": "¿Hay aparcamiento?",
+      "answer": "Sí, hay aparcamiento disponible en el mismo recinto de la finca — no hace falta buscar sitio en el pueblo."
+    },
+    {
+      "question": "¿Puedo llevar a mis hijos?",
+      "answer": "Es una boda solo para adultos. Sabemos que a veces complica la logística, ¡y os lo agradecemos muchísimo!"
+    },
+    {
+      "question": "¿Dónde puedo alojarme?",
+      "answer": "Hemos recopilado algunas opciones cerca de Alaró en la sección Alojamiento , un poco más arriba."
+    },
+    {
+      "question": "¿Habrá transporte?",
+      "answer": "Sí, organizaremos autobús que hace todo el trayecto: sale de la ceremonia en Palma hacia la finca en Alaró, y de vuelta a Palma al acabar la fiesta. Indícanoslo en el formulario de confirmación para saber cuántos autobuses necesitamos."
+    },
+    {
+      "question": "¿Cuál es el código de vestimenta?",
+      "answer": "Elegante de verano — tonos tierra y frescos bienvenidos. (Si vienes en bañador no te juzgaremos)."
+    },
+    {
+      "question": "¿Hará mucho calor?",
+      "answer": "Sí. Nosotros ya hemos hecho las paces con que el peinado no llegará entero a las 18:00 — os recomendamos lo mismo."
+    },
+    {
+      "question": "¿Hasta cuándo puedo confirmar mi asistencia?",
+      "answer": "Antes del 1 de mayo de 2027, por favor — nos ayuda muchísimo a organizarlo todo con tiempo."
+    }
+  ],
+  "locations": [
+    {
+      "name": "Parroquia de Santa Teresa del Niño Jesús",
+      "address": "Carrer de Pilar Juncosa, 13, Ponent 07014 Palma, Illes Balears",
+      "link": "https://www.google.com/maps/dir/?api=1&destination=Carrer+de+Pilar+Juncosa%2C+13%2C+07014+Palma%2C+Illes+Balears",
+      "map": {
+        "title": "Mapa de la ceremonia: Parroquia de Santa Teresa del Niño Jesús, Palma",
+        "src": "https://www.google.com/maps?q=Parroquia+de+Santa+Teresa+del+Ni%C3%B1o+Jes%C3%BAs%2C+Carrer+de+Pilar+Juncosa+13%2C+Palma&output=embed",
+        "loading": "lazy",
+        "referrerpolicy": "no-referrer-when-downgrade"
+      }
+    },
+    {
+      "name": "Finca S'Olivaret",
+      "address": "Carretera Alaró–Orient, Km 3 07340 Alaró, Illes Balears",
+      "link": "https://www.google.com/maps/dir/?api=1&destination=Carretera+Alar%C3%B3-Orient%2C+Km+3%2C+07340+Alar%C3%B3%2C+Illes+Balears",
+      "map": {
+        "title": "Mapa de la celebración: Carretera Alaró-Orient, Km 3, Alaró, Mallorca",
+        "src": "https://www.google.com/maps?q=Carretera+Alar%C3%B3-Orient%2C+Km+3%2C+07340+Alar%C3%B3%2C+Illes+Balears&output=embed",
+        "loading": "lazy",
+        "referrerpolicy": "no-referrer-when-downgrade"
+      }
+    }
+  ],
+  "googleCalendar": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+de+Marina+%26+Jaime&dates=20270703T150000Z/20270703T210000Z&details=%C2%A1Nos+casamos%21+Ceremonia+en+la+Parroquia+de+Santa+Teresa+del+Ni%C3%B1o+Jes%C3%BAs+%28Palma%29.+Celebraci%C3%B3n+en+Carretera+Alar%C3%B3-Orient%2C+Km+3%2C+Alar%C3%B3.&location=Carrer+de+Pilar+Juncosa%2C+13%2C+07014+Palma%2C+Illes+Balears&sf=true&output=xml",
+  "booking": "https://www.booking.com/searchresults.es.html?ss=Mallorca&checkin=2027-07-03&checkout=2027-07-04&group_adults=2&no_rooms=1&group_children=0",
+  "stayIntro": "Alaró es un pueblo pequeño, así que si venís de fuera os recomendamos reservar con tiempo. Aquí van algunas opciones a poca distancia de la boda:",
+  "locationIntro": "La boda tiene dos escenarios: la ceremonia en Palma y la celebración en pleno corazón de la Serra de Tramuntana, entre Alaró y Orient.",
+  "rsvpIntro": "Nos haría mucha ilusión contar contigo. Rellena el formulario para que podamos organizarlo todo con cariño.",
+  "bus": "Autobús organizado: Palma (iglesia) → Alaró (finca) → Palma, de vuelta al acabar la fiesta."
+}

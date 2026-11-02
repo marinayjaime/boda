@@ -1,0 +1,25 @@
+{
+  "name": "boda-atlas-luz",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/prepare-sites-build.mjs",
+    "preview": "vite preview",
+    "test:sites": "node --test tests/sites-worker.test.mjs",
+    "check:content": "node scripts/check-content.mjs"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "@vitejs/plugin-react": "5.0.4",
+    "gsap": "^3.15.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "three": "^0.187.0",
+    "vite": "6.4.2"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}

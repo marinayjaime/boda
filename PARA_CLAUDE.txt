@@ -1,0 +1,11 @@
+Ejecuta localmente esta V2 de la web de boda de Marina y Jaime. No empieces otro diseño desde cero.
+
+1. Lee AGENTS.md, LEEME.md, design-qa.md y reference/escena-v2-creditos.txt.
+2. Ejecuta npm ci, npm run check:content y npm run dev -- --host 0.0.0.0. Abre el navegador y muéstrame la web completa.
+3. La corrección vigente exige fotografía y realismo, no árboles poligonales ni autobús geométrico. Conserva tonos claros y originales. Mantén la carretera y el bosque fotorealistas, el coche, la apertura al scroll, galería arrastrable y exploradores de lugares/alojamientos.
+4. Conserva los 26 archivos originales, las 14 fotos en orden, toda la información real, enlaces, siete preguntas y respuestas y siete campos del formulario. No inventes datos. El autobús organizado Palma–Alaró–Palma sigue siendo la información real; el coche es una escena artística ilustrativa.
+5. Comprueba Safari y mi iPhone, especialmente apertura, scroll sticky, trayecto, zoom, slider, galería y foco por teclado. No hay validación visual de la rama WebGL en el entorno de entrega. La alternativa fotográfica sí está comprobada. Comprueba encuadre, orientación, escala e iluminación del modelo volumétrico. El bosque es una imagen, no un entorno 3D navegable.
+6. Comprueba la procedencia/licencia del modelo Ferrari antes de publicarlo. No asumas que la licencia MIT de Three.js cubre todos los recursos de sus ejemplos.
+7. Mantén RSVP_CONFIG.demo = true mientras pruebas. No envíes respuestas ficticias. La integración real y los nombres originales están conservados. Activa demo=false únicamente cuando te lo pida.
+8. Tras cambios ejecuta npm run check:content y npm run build. dist/client contiene el resultado. Si se entrega a Sites, ejecuta además npm run test:sites.
+9. Trabaja únicamente en esta copia independiente. NO modifiques marinayjaime/boda, NO publiques y NO hagas push sin que te lo pida expresamente.
