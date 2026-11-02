@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Marina y Jaime//Boda 2027//ES
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:marina-jaime-boda-20270703@marinayjaime.wedding
+DTSTAMP:20261101T000000Z
+DTSTART:20270703T150000Z
+DTEND:20270703T210000Z
+SUMMARY:Boda de Marina & Jaime
+DESCRIPTION:¡Nos casamos! Ceremonia en la Parroquia de Santa Teresa del N
+ iño Jesús (Palma). Celebración en Carretera Alaró-Orient\, Km 3\, Ala
+ ró.
+LOCATION:Carrer de Pilar Juncosa\, 13\, 07014 Palma\, Illes Balears
+END:VEVENT
+END:VCALENDAR

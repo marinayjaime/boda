@@ -1,3 +1,12 @@
+# Estado actual (2 de noviembre de 2026) — prevalece sobre lo de abajo
+
+- Este diseño ya ES la web de producción (repo marinayjaime/boda, GitHub Pages en https://marinayjaime.github.io/boda/).
+- El código fuente vive en `codigo/`. `npm run build` (desde `codigo/`) comprueba el contenido, compila y copia la web resultante a la raíz del repositorio, que es lo que sirve GitHub Pages. Para publicar: `npm run build`, commit y push.
+- RSVP real activado (`src/config.js`, `demo: false`), conectado a Google Sheets vía `google-apps-script.gs` en la raíz.
+- Tipografía serif: Lora (no Cormorant — su "J" baja de la línea base y Jaime no lo quiere).
+- Historial completo de cambios y decisiones: `CHANGELOG.md` en la raíz del repo.
+- Las instrucciones de abajo sobre "no publicar", "modo demo" y "Sites" son del prototipo y ya no aplican.
+
 # Prototype Instructions
 
 Run the local server yourself and open the preview in the browser available to this environment. Do not give the user server-start instructions when you can run it.

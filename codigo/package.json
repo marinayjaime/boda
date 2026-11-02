@@ -5,11 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/prepare-sites-build.mjs",
+    "build": "node scripts/check-content.mjs && vite build && node scripts/copiar-a-raiz.mjs",
     "preview": "vite preview",
     "test:sites": "node --test tests/sites-worker.test.mjs",
-    "check:content": "node scripts/check-content.mjs",
-    "deploy": "bash scripts/deploy-pages.sh"
+    "check:content": "node scripts/check-content.mjs"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",

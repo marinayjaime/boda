@@ -19,7 +19,7 @@ Descartadas (2026-08-20, decisión explícita del usuario, no reabrir sin que lo
 - **Sello de lacre**: el nuevo diseño lo sustituye por "M&J" en texto en cabecera y pie; Jaime decide dejarlo así de momento. El favicon sí sigue siendo el sello.
 - **Coche 3D**: es el Ferrari 458 de los ejemplos de Three.js (licencia del modelo sin confirmar); Jaime lo acepta porque la web es personal, no comercial.
 - **RSVP real activado** (`src/config.js`, `RSVP_CONFIG.demo = false`): mismos nombres de campo y valores que el Apps Script (`google-apps-script.gs`), comprobado; los contadores leen la hoja real.
-- **Publicación sin GitHub Actions** (decisión de Jaime, "de momento"): `npm run deploy` (`scripts/deploy-pages.sh`) compila y sube `dist/client/` a la rama `gh-pages`. GitHub Pages pasa a servir `gh-pages` en vez de la raíz de `main` (que ahora solo tiene el código fuente). Cada cambio: commit en `main` → `npm run deploy`.
+- **Publicación igual que siempre (commit + push), sin GitHub Actions ni ramas extra**: el código fuente del diseño vive en `codigo/`; `npm run build` (desde `codigo/`) comprueba el contenido, compila y copia la web resultante a la raíz del repo (`index.html`, `assets/`, `fonts/`, `models/`, `scenes/`…), que GitHub Pages sigue sirviendo sin cambiar su configuración. Se descartaron antes una GitHub Action y una rama `gh-pages`: Jaime prefiere que funcione como el resto de sus proyectos. **No editar a mano los archivos de la raíz generados** — se sobrescriben en cada build; los cambios se hacen en `codigo/src/` o `codigo/public/`.
 
 ## 2026-08-26 ("Nuestra historia" como línea del tiempo)
 
